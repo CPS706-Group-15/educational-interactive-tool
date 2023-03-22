@@ -15,16 +15,17 @@
     height: 4.5em;
     align-items: center;
     justify-content: space-between;
-    background-color: aquamarine;
+    background-color: #A9C7A8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .logo {
     font-size: 2em;
-    color: rgb(5, 5, 116);
-    padding-left: 20px;
+    color: rgb(0, 0, 0);
+    padding-left: 60px;
+    padding-top: 0.4em;
   }
-  
+
   .responsive {
     padding-right: 20px;
     cursor: pointer;
@@ -40,17 +41,22 @@
     width: 100%;
     font-size: 1.2em;
     position: fixed;
-    background-color: lightblue;
+    background-color: #A9C7A8;
   }
   
   .nav__link a:hover {
     transition: 10ms;
     color: white;
-    background-color: rgb(53, 9, 9);
+    background-color: #7F9F7E;
   }
   
   .hide {
     display: none;
+  }
+
+  .selected {
+    color: white;
+    background-color: #7F9F7E;
   }
 
   @media screen and (min-width: 800px) {
