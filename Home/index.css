@@ -18,24 +18,7 @@
     background-color: #A9C7A8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  
-  .logo {
-    font-size: 2em;
-    color: rgb(0, 0, 0);
-    padding-left: 60px;
-    padding-top: 0.4em;
-  }
 
-  .responsive {
-    padding-right: 20px;
-    cursor: pointer;
-  }
-  
-  .responsive .responsivePic {
-    display: block;
-    /* margin-bottom: 10px; */
-  }
-  
   .nav__link {
     left: 18px;
     width: 100%;
@@ -48,6 +31,13 @@
     transition: 10ms;
     color: white;
     background-color: #7F9F7E;
+  }
+  
+  .logo {
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    padding-left: 60px;
+    padding-top: 0.4em;
   }
   
   .hide {
