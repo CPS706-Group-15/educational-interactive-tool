@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routing.io</title>
+    <link rel="stylesheet" href="../Home/index.css">
+    <link rel="icon" href="../Home/logoB.png">
+    <script src="../Home/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+          <a href="../index.html" class="logo"><img src="../Home/logo.png"></a>
+          <div class="nav__link hide">
+            <a href="../About/about.html">About</a>
+            <a href="../Centralized/centralized.html" class="selected">Centralized</a>
+            <a href="../Decentralized/decentralized.html">Decentralized</a>
+          </div>
+        </nav>
+    </header>
+
+    <!-- PARENT DIV  <img src="/Assets/Vector.jpg" width="100%" height="50%"> -->
+    <section class="container-top">
+      <div class="information">
+        <div class="network-pic">
+          <img class="network-pic" src="/Assets/network1.png"width="400" height="200" >
+        </div>
+        <div class="network-verbiage">
+          <h1>Centralized Algorithm</h1>
+          <p>
+            It finds the least-cost path between source and destination nodes by using global knowledge about the network. 
+            So, it is also known as global routing algorithm
+          </br></br>
+          It is also known as global routing algorithm as it computes the least-cost path between source and destination by using complete and global knowledge about the network. 
+          This algorithm takes the connectivity between the nodes and link cost as input, and this information is obtained before actually performing any calculation. 
+          Link state algorithm is referred to as a centralized algorithm since it is aware of the cost of each link in the network.
+          </p></br>
+          <button class="submit-btn" role="button" onClick="document.getElementById('network').scrollIntoView();" >Submit</button>
+         
+      </div>
+       
+        
+      </div>
+      <!-- Wave SVG-->
+      <svg class="waves"  viewBox="0 0 1844 322" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="wave 1" clip-path="url(#clip0_41_5)" filter="url(#filter0_d_41_5)">
+          <g id="Group 4">
+            <g id="wave 2" clip-path="url(#clip1_41_5)" filter="url(#filter1_d_41_5)">
+            <path id="Vector" d="M-184 144.472L-116.4 115.328C-48.8 86.621 86.4 27.6785 221.6 39.6853C356.8 51.6921 460.3 162.839 595.5 163.167C730.7 162.839 897.6 51.6921 1032.8 45.4704C1168 39.6853 1323.8 145.702 1459 163.167C1552.13 175.197 1635.49 149.758 1700.44 127.054C1750.55 109.539 1799.21 87.1562 1844 58.6666V58.6666V284.188H1776.4C1708.8 284.188 1573.6 284.188 1438.4 284.188C1303.2 284.188 1168 284.188 1032.8 284.188C897.6 284.188 762.4 284.188 627.2 284.188C492 284.188 356.8 284.188 221.6 284.188C86.4 284.188 -48.8 284.188 -116.4 284.188H-184V144.472Z" fill="#587357" fill-opacity="0.83"/>
+            </g>
+          <path id="Vector_2" d="M-184 186.436L-116.4 154.961C-48.8 123.957 86.4 60.2994 221.6 73.2667C356.8 86.2341 492 173.469 627.2 173.823C762.4 173.469 897.6 86.2341 1032.8 79.5147C1168 73.2668 1303.2 148.713 1438.4 167.575C1573.6 186.436 1708.8 148.713 1776.4 129.852L1844 110.99V337.329H1776.4C1708.8 337.329 1573.6 337.329 1438.4 337.329C1303.2 337.329 1168 337.329 1032.8 337.329C897.6 337.329 762.4 337.329 627.2 337.329C492 337.329 356.8 337.329 221.6 337.329C86.4 337.329 -48.8 337.329 -116.4 337.329H-184V186.436Z" fill="#7F9F7E"/>
+          </g>
+        </g>
+    </section> 
+    
+    <div class="container-bottom">
+      <div id="network" class="network"> <!-- Where the network svg goes-->
+          <h1 class="heading">Centralized Algorithm</h1>
+      </div>
+        
+      <div class="infobox"> <!-- information div-->
+          <div class="sourcebox">
+            <form action="">
+              <label for="source">Source:</label>
+              <input class="input" type="text" id="source" name="src">
+              
+              <label for="dest">Destination:</label>
+              <input class="input" type="text" id="destination" name="dest">
+              
+              <button class="submit-btn" role="button">Submit</button>
+
+
+            </form>
+         
+          </div>
+          <!-- <div class="explanation"></div>-->
+          <div class="route">
+            <h2 class="heading">Route</h2>
+             
+          </div>
+        </div>
+    </div>
+    
+</body>
+</html>
