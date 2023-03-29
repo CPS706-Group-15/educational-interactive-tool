@@ -86,7 +86,6 @@
   }
 
   .picture {
-    background-color : pink;
     height : 30em;
     width : 50%;
     padding: 5em 5em 0em 5em;
@@ -144,6 +143,7 @@
 .picTwo {
     height: 3em;
     display: block;
+    margin: auto;
 }
 
 .container-top{
