@@ -119,13 +119,22 @@
     color: #FFFEF0;
   }
 
+  .headingtwo{
+    text-align: center;
+    font-family: 'Inter', sans-serif;;
+    padding-top:30px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #658163;
+  }
+
+
   .headingMiddle {
     text-align: center;
     font-family: 'Inter', sans-serif;;
     font-weight: bold;
     color: #FFFEF0;
     font-size: 3em;
-
   }
 
   .submit-btn {
