@@ -18,6 +18,7 @@
     background-position: center;
     overflow: hidden;
     position: relative;
+    padding-top: 1em;
   }
 
   .container-top .waves{
@@ -29,7 +30,7 @@
 
   .container-middle{
     background-color: #7F9F7E; 
-    height:70vh;
+    height:90vh;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -113,9 +114,18 @@
   .heading{
     text-align: center;
     font-family: 'Inter', sans-serif;;
-    padding-top:25px;
+    padding-top:30px;
     font-weight: bold;
     color: #FFFEF0;
+  }
+
+  .headingMiddle {
+    text-align: center;
+    font-family: 'Inter', sans-serif;;
+    font-weight: bold;
+    color: #FFFEF0;
+    font-size: 3em;
+
   }
 
   .submit-btn {
