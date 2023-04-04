@@ -22,26 +22,38 @@
         </nav>
     </header>
 
-    <!-- PARENT DIV  <img src="/Assets/Vector.jpg" width="100%" height="50%"> -->
     <section class="container-top">
-      <div class="information">
-        <div class="network-pic">
-          <img class="network-pic" src="../Decentralized/Assets/network2.png"width="400" height="200" >
+      <div class="container-parent">
+      
+        <div id="network" class="network">
+            <h1 class="heading">Decentralized Algorithm</h1>
         </div>
-        <div class="network-verbiage">
-          <h1>Decentralized Algorithm</h1>
-          <p>
-            Decentralized algorithm is a form of computation that achieves a global goal through local dynamics that
-            relies on low-cost communication between directly-connected agents. On large-scale optimization tasks involving
-            distributed datasets, decentralized algorithms have shown strong, sometimes superior, performance over distributed
-            algorithms with a central node.
-          </p></br>
-          <button class="submit-btn" role="button" onClick="document.getElementById('network').scrollIntoView();" >Get Started</button>
-         
+          
+        <div class="infobox">
+            <div class="sourcebox">
+                <div class="block">
+                  <div>
+                    <label for="source">Source:</label>
+                    <br>
+                    <br>
+                    <label class="dest" for="dest">Destination:</label>
+                  </div>
+              
+                  <div class="box2">
+                    <input class="input" type="text" id="source" name="src">
+                    <br>
+                    <br>
+                    <input class="input" type="text" id="destination" name="dest">
+                  </div>
+                </div>
+                <button class="submit-btn" role="button">Change Example</button>
+                <button class="submit-btn" role="button">Submit</button>
+            </div>
+            <div class="route">
+            </div>
+          </div>
       </div>
-       
-        
-      </div>
+
       <!-- Wave SVG-->
       <svg class="waves"  viewBox="0 0 1844 322" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="wave 1" clip-path="url(#clip0_41_5)" filter="url(#filter0_d_41_5)">
@@ -55,9 +67,7 @@
     </section> 
     
     <section class="container-middle">
-      <div class="a distancvector">
-        
-      </div>
+
 
     </section>
 
@@ -72,35 +82,9 @@
         </g>
         </g>
       </svg>
-      <div class="container-parent">
-      
-        <div id="network" class="network"> <!-- Where the network svg goes-->
-            <h1 class="heading">Decentralized Algorithm</h1>
-        </div>
-          
-        <div class="infobox"> <!-- information div-->
-            <div class="sourcebox">
-              <form action="">
-                <label for="source">Source:</label>
-                <input class="input" type="text" id="source" name="src">
-                
-                <label for="dest">Destination:</label>
-                <input class="input" type="text" id="destination" name="dest">
-                
-                <button class="submit-btn" role="button">Submit</button>
-  
-  
-              </form>
-           
-            </div>
-            <!-- <div class="explanation"></div>-->
-            <div class="route">
-              <h2 class="heading">Route</h2>
-               
-            </div>
-          </div>
-      </div>
     </section>
+
+
     <footer>
       <div id="copywrite">
         <p>&copy; 2023 CPS706. All rights reserved.</p>
