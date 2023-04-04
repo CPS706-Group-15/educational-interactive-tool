@@ -1,5 +1,5 @@
 main{
-    background-color: rgb(255,254,241);
+    background-color: #FFFEF0;
 }
 
 .nav {
@@ -62,32 +62,37 @@ main{
   }
 
 .ourmission{
-    padding-top: 252px;
-    padding-left: 248px;
+    padding-top: 0.5em;
     font-family: 'Inter', sans-serif;
     font-size: 64px;
+    font-weight: bold;
+    background-color: #FFFEF0;
 }
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 200px;
+    padding-left: 300px;
+    background-color: #FFFEF0;
   }
 
 .image{
-    padding-top: 370px;
-    padding-left: 450px;
-    height: 50px;
-    width: 50px;
+    margin-top: 5em;
+    height: 25em;
+    width: 190em;
     border-radius: 53px;
     background-color: black;
+    -webkit-border-radius: 53px;
+    -moz-border-radius: 53px;
+    -ms-border-radius: 53px;
+    -o-border-radius: 53px;
 }
 
 .statement{
     padding-top: -252px;
     padding-left: 120px;
-    padding-right: 121px;
+    padding-right: 20em;
     font-family: 'Inter', sans-serif;
     font-size: 32px;
     line-height: 2.5;
@@ -95,7 +100,7 @@ main{
 
 .container-top{
     background-color: #FFFEF0;
-    height:50vh;
+    height:45vh;
     background-size: cover;
     background-position: center;
     overflow: hidden;

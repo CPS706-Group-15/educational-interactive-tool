@@ -1,5 +1,5 @@
 body {
-  background-color: #7F9F7E; 
+   
   margin: 0;
 }
 
@@ -7,8 +7,9 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  padding-top: 2%;
+  margin-top: -2em;
+  z-index: 1;
+  background-color: #7F9F7E;
 }
 
 .title {
@@ -23,7 +24,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  background-color: #7F9F7E;
 }
 
 .row {
@@ -66,7 +67,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 10em;
+  background-color: #7F9F7E;
 }
 
 #copywrite {
@@ -74,5 +76,5 @@ footer {
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
-  padding-top: 10%;
+  padding-top: 1%;
 } 
