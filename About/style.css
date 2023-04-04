@@ -67,7 +67,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10em;
   background-color: #7F9F7E;
 }
 
@@ -76,5 +75,6 @@ footer {
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
-  padding-top: 1%;
+  padding-top: 7%;
+  padding-bottom: 1%;
 } 

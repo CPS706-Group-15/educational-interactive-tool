@@ -276,3 +276,17 @@
     color: #174ea6;
   }
   
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #copywrite {
+    background-color: transparent;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 1%;
+  } 
+  
