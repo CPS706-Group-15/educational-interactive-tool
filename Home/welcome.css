@@ -9,7 +9,7 @@
   .welcome {
     height : 30em;
     width : 60%;
-    padding: 10em 5em 0em 15em;
+    padding: 10em 5em 0em 12em;
   }
 
   .picture {
@@ -65,7 +65,7 @@
 .pic {
     height: 26em;
     display: block;
-    padding-right: 11em;
+    padding-right: 5em;
     margin-top: -5em;
 }
 
