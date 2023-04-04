@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
   a {
     color: black;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
   }
 
   /* nav styles */
@@ -16,7 +18,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: #A9C7A8;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
   }
 
   .nav__link {
@@ -69,6 +71,98 @@
     }
   }
 
+/////////////////////////////////////////////////
+  .total {
+    background-color :#FFFEF0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .welcome {
+    height : 30em;
+    width : 60%;
+    padding: 5em 5em 0em 10em;
+  }
+
+  .picture {
+    height : 30em;
+    width : 50%;
+    padding: 5em 5em 0em 5em;
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+  }
+  
+  .textOne {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 74px;
+    line-height: 111px;
+    color : #04725C;
+  }
+
+.textTwo {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 60px;
+    color : black;
+}
+
+.button {
+    width: 300px;
+    height: 70px;
+    background: #FFFFF9;
+    border: 7px solid #658163;
+    border-radius: 55px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    color : #748A70;
+    padding: 1em 1em 1em 1em;
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.button:hover {
+  border: 7px solid #658163;
+  background: #658163;
+  color: white;
+}
+
+.pic {
+    height: 20em;
+    display: block;
+}
+
+.picTwo {
+    height: 3em;
+    display: block;
+    margin: auto;
+}
+
+.container-top{
+  background-color: #FFFEF0;
+  height: 33vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-top .waves{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+///////////////////////////////
   /* Centralized & Decentralized CSS*/
 
   .container-top{
@@ -289,4 +383,4 @@
     font-weight: bold;
     padding-bottom: 1%;
   } 
-  
+ 
