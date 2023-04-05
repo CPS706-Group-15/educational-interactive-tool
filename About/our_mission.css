@@ -1,4 +1,3 @@
-
 .ourmission{
     padding-top: 0.5em;
     font-family: 'Inter', sans-serif;
@@ -20,7 +19,7 @@
     height: 28em;
     width: 195em;
     border-radius: 53px;
-    background-color: black;
+    background-color: #FFFEF0;
     -webkit-border-radius: 53px;
     -moz-border-radius: 53px;
     -ms-border-radius: 53px;
