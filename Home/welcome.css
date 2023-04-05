@@ -7,15 +7,15 @@
   }
 
   .welcome {
-    height : 30em;
+    height : 40%;
     width : 60%;
-    padding: 10em 5em 0em 12em;
+    padding: 8em 5em 0em 12em;
   }
 
   .picture {
     height : 30em;
     width : 50%;
-    padding: 5em 5em 0em 5em;
+    padding: 3em 5em 0em 5em;
     display: inline-flex;
     align-items: center; 
     justify-content: center;
@@ -66,11 +66,13 @@
     height: 26em;
     display: block;
     padding-right: 5em;
-    margin-top: -5em;
+    margin-top: 5em;
 }
 
 .picT {
   background-color :#FFFEF0;
+  padding-top: 4%;
+  padding-bottom: 2%;
 }
 .picTwo {
     height: 3em;
@@ -93,6 +95,28 @@
   100% { transform: translateY(-20px); }
 }
 
+@media only screen and (max-width: 1300px)  
+{
+  .pic {
+    display: none;
+}
+
+.picT {
+  display: none;
+}
+.picTwo {
+  display: none;
+}
+.welcome {
+  height : 40%;
+  width : 100%;
+  padding: 5em 5em 5em 12em;
+}
+.picture {
+  display: none;
+}
+
+}
 .container-top{
   background-color: #FFFEF0;
   height: 33vh;
