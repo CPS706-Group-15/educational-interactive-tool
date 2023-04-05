@@ -33,8 +33,8 @@
           help students better understand routing algorithms
         </p>
         <br>
-        <button class="button" >
-          <a class = "button1" href="#centralized">Learn More</a>
+        <button class="button" onClick="document.getElementById('centralized').scrollIntoView();">
+          Learn More
         </button>
       </div>
       
@@ -55,7 +55,7 @@
                   <img src="https://via.placeholder.com/300" alt="Card image">
                   <div class="card-content">
                     <h2>Card Title 1</h2>
-                    <p>Card description goes here.</p>
+                    <p class="para">Card description goes here.</p>
                   </div>
                 </div>
               
@@ -63,7 +63,7 @@
                   <img src="https://via.placeholder.com/300" alt="Card image">
                   <div class="card-content">
                     <h2>Card Title 2</h2>
-                    <p>Card description goes here.</p>
+                    <p class="para">Card description goes here.</p>
                   </div>
                 </div>
               
@@ -71,38 +71,47 @@
                   <img src="https://via.placeholder.com/300" alt="Card image">
                   <div class="card-content">
                     <h2>Card Title 3</h2>
-                    <p>Card description goes here.</p>
+                    <p class="para">Card description goes here.</p>
                   </div>
                 </div>
+            </div>
+            <div class="btn">
+              <button onClick="location.href='Decentralized/centralized.html'" class="buttonTest">Test it out!</button>
             </div>
         </div>
         <img class="wave1" src="Home/Group 3 (3).png" width={50}/>
         <div class="cards-section">
-          <h1 class="headingMiddle2" >Decentralized</h1>
+          <h1 class="headingMiddle2" >Decentralized: Distance-vector</h1>
             <div class="container">
                 <div class="green">
-                  <img src="https://via.placeholder.com/300" alt="Card image">
+                  <img src="https://cdn.discordapp.com/attachments/1075837327944986664/1093300356001321052/AfrrWLhrfDCsAAAAAElFTkSuQmCC.png" alt="Card image">
                   <div class="card-content">
-                    <h2>Card Title 1</h2>
-                    <p>Card description goes here.</p>
+                    <h2>What is it?</h2>
+                    <p class="para">It is a crucial algorithm used in networking to find the shortest path between nodes. This ensures datagram, 
+                      which are packets of data, are sent through the most optimal path to <strong>minimize delays and maximize efficiency.</strong></p>
                   </div>
                 </div>
               
                 <div class="green">
-                  <img src="https://via.placeholder.com/300" alt="Card image">
+                  <img src="https://www.researchgate.net/publication/296679145/figure/fig2/AS:335501996380160@1457001317059/Distance-vector-routing.png" alt="Card image">
                   <div class="card-content">
-                    <h2>Card Title 2</h2>
-                    <p>Card description goes here.</p>
+                    <h2>How it works?</h2>
+                    <p class="para">Each node has its own routing table which contains the distance between the current node and every other node in the system. 
+                      The algorithm then uses these tables to transfer data between nodes in the most efficient path.</p>
                   </div>
                 </div>
               
                 <div class="green">
-                  <img src="https://via.placeholder.com/300" alt="Card image">
+                  <img src="https://www.allaboutcircuits.com/uploads/articles/Althea_creates_a_decentralized_ISP,_relying_on_mesh_networks..jpg" alt="Card image">
                   <div class="card-content">
-                    <h2>Card Title 3</h2>
-                    <p>Card description goes here.</p>
+                    <h2>why is it useful?</h2>
+                    <p class="para"><strong>This algorithm is more useful because it is distributed, fault-tolerant and adaptable.</strong> This makes them perfect for large complex networks, as they can adapt to changes 
+                      very easily, scalable, tolerant and robust.</p>
                   </div>
                 </div>
+            </div>
+            <div class="btn">
+              <button onClick="location.href='Decentralized/decentralized.html'" class="buttonTest2">Test it out!</button>
             </div>
         </div>
         <footer>

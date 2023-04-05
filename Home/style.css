@@ -4,6 +4,11 @@ body {
     padding: 0;
     background-color: #FFFEF0;
     font-family: 'Poppins', sans-serif;
+    overflow-x: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -25,7 +30,7 @@ body {
     background-color: #7F9F7E;
     width: 100%;
     /* padding-top: 5%; */
-    padding-bottom: 10%;
+    padding-bottom: 7%;
 }
 
 .cards-section {
@@ -39,7 +44,7 @@ body {
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
-    height: 50vh;
+    height: 53vh;
     color: #FFFFF9;
 }
 
@@ -66,7 +71,7 @@ body {
     width: 25%;
     border-radius: 25px;
     overflow: hidden;
-    height: 50vh;
+    height: 53vh;
     background-color: #FFFFF9;
 }
   
@@ -129,3 +134,59 @@ footer {
     font-size: 3em;
     padding-bottom: 3%;
   }
+
+.buttonTest {
+    width: auto;
+    height: auto;
+    background: #FFFFF9;
+    border: 6px solid #658163;
+    border-radius: 55px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.3em;
+    color : #748A70;
+    padding: 0.5em 1em 0.5em 1em;
+    margin-top: 20px;
+}
+
+.buttonTest:hover {
+  border: 6px solid #658163;
+  background: #658163;
+  color: #FFFEF0;
+}
+
+.buttonTest2:hover {
+    border: 6px solid #FFFEF0;
+    background: #658163;
+    color: #FFFEF0;
+
+}
+
+.buttonTest2 {
+  background: #FFFFF9;
+  border: 6px solid #658163;
+  color : #748A70;
+  width: auto;
+  height: auto;
+  border-radius: 55px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.3em;
+  padding: 0.5em 1em 0.5em 1em;
+  margin-top: 20px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.para {
+    padding: 0.5em 2.5em 0.5em 2.5em;
+    line-height: 1.8em;
+}
+
+h2 {
+    padding-top: 1em;
+}
