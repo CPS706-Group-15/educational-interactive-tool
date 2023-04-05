@@ -17,14 +17,14 @@ body {
 }
 .wave1 {
     width: 100%;
-    padding-bottom: 7%;
+    padding-bottom: 5%;
 }
 
 
 .wave-section {
     background-color: #7F9F7E;
     width: 100%;
-    padding-top: 5%;
+    /* padding-top: 5%; */
     padding-bottom: 10%;
 }
 
