@@ -44,13 +44,12 @@ html {
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
-    height: 53vh;
     color: #FFFFF9;
 }
 
 .green img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     display: block;
     margin: auto;
@@ -62,7 +61,6 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
   
 .card {
@@ -71,20 +69,19 @@ html {
     width: 25%;
     border-radius: 25px;
     overflow: hidden;
-    height: 53vh;
     background-color: #FFFFF9;
 }
   
 .card img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     display: block;
     margin: auto;
 }
   
 .card-content {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -93,12 +90,13 @@ html {
 }
   
 @media only screen and (max-width: 768px) {
-    .card {
+    .card, .green {
         width: 100%;
     }
 
     .container {
         flex-direction: column;
+        margin: auto;
     }
 }
 
