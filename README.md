@@ -3,9 +3,7 @@ This an interactive website teaching about centralized and decentralized algorit
 
 # Usage
 ## Hosted site
-This is the website
-
-https://cps706-group-15.github.io/educational-interactive-tool/
+This is the website: https://cps706-group-15.github.io/educational-interactive-tool/
 
 It contains different tabs to explain both centralized and decentralized algorithms.
 
