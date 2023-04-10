@@ -193,9 +193,29 @@ graph.addConnection("E", "F", 7);
 
 console.log(graph);
 
-function submit() {
-  console.log("ABC");
-  let radioOption = document.querySelector('input[type = radio]:checked').value;
+function validateForm(){
+   
+
+  let startNode = document.forms["myForm"]["nm"].value;
+
+  const pattern = /^[A-Fa-f]$/i;
+
+  if( startNode.length == 1 &&  pattern.test(startNode)){
+      let input = document.forms["myForm"]["nm"].value; 
+      document.getElementById("runAlgo").disabled = true;
+      submit(input.toUpperCase());
+            
+  } 
+  else{
+      alert("Enter Valid Source [A - F] ");
+      return false;
+  }
+      
+}
+function submit(radioOption) {
+  //console.log("ABC");
+  //let radioOption = document.forms["myForm"]["nm"].value; //document.querySelector('input[type = radio]:checked').value;
+  
   let shortestPathsFromA = graph.getShortestPaths(graph.routers.get(radioOption));
   console.log("Distances from router A:");
   for (let [routerName, distance] of shortestPathsFromA) {

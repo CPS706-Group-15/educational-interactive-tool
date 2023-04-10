@@ -27,7 +27,7 @@
       
         <!-- NETWORK SVG-->
        <div id="network" class="network-container">
-           <h1 class="heading">Centralized Algorithm</h1>
+           <h1 class="heading">Decentralized Algorithm</h1>
            
            <svg class="network" width="899" height="914" viewBox="0 0 899 914" fill="none" xmlns="http://www.w3.org/2000/svg">
              <g id="Group 12">
@@ -159,41 +159,17 @@
        <div class="infobox"> <!-- information div-->
         <!-- INPUT SOURCE-->
         <div class="sourcebox">
-          <h1 class="headingthree">Choose source router</h1>
+          <form name="myForm" >
+            <label for="source">Source:</label>
+            
+            <input  id="source" class="input" name="nm" type="text" placeholder="Enter Source from A to F">
+            
+            
+          </form>
           
-          <div class="cen">
-            <label class="container only">A
-              <input type="radio" name="radio" value="A">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container only">B
-              <input type="radio" name="radio" value="B">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">C
-              <input type="radio" name="radio" value="C">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <br>
-          <div class="cen">
-            <label class="container only">D
-              <input type="radio" name="radio" value="D">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container only">E
-              <input type="radio" name="radio" value="E">
-              <span class="checkmark"></span>
-            </label>
-            <label class="container ">F
-              <input type="radio" name="radio" value="F">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <br>
-          <div class="cen">
-            <button class="submit-btn" role="button" onClick={submit()}>Submit</button>
-          </div>
+          <button id="runAlgo" class="submit-btn"  value="Submit" onclick="validateForm()">Submit</button>
+          <button id="resetAlgo" class="submit-btn"  value="Submit" onclick="refreshPage()">Reset</button>
+           
         </div>
          <!-- explanation -->
         <div class="explanation">
@@ -234,7 +210,7 @@
             
           </div>
           
-          
+          <!-- SVG FOR PARENT ARRAY AND DISTANCES ARRAY -->
           <svg class="arrays" width="774" height="312" viewBox="0 0 774 312" fill="none" xmlns="http://www.w3.org/2000/svg">  
             <g id="Group 13">
             <rect id="PRA" x="194.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
@@ -505,14 +481,14 @@
       <!-- Dijkstra Algorihtm Steps  -->
       <div class="distanceVector_cards">
           <div id="distanceVector_cards1">
-            <img src="/Assets/Step1.png">
-            <img src="/Assets/Step2.png">
-            <img src="/Assets/Step3.png">
+            <img src="../Assets/Step1.png">
+            <img src="../Assets/Step2.png">
+            <img src="../Assets/Step3.png">
           </div>
           <div id="distanceVector_cards2">
-            <img src="/Assets/Step4.png">
-            <img src="/Assets/Step5.png">
-            <img src="/Assets/Step6.png">
+            <img src="../Assets/Step4.png">
+            <img src="../Assets/Step5.png">
+            <img src="../Assets/Step6.png">
           </div>     
       </div>
       
@@ -531,7 +507,7 @@
           </ol>
         </div>
         <div class="endP">
-          <img class="imagenet" src="./Assets/neural-network.png">
+          <img class="imagenet" src="../Assets/neural-network.png">
         </div>
       </div>
 

@@ -145,7 +145,7 @@ function validateForm(){
    
 
     let startNode = document.forms["myForm"]["nm"].value;
-
+    let desNode = document.forms["myForm"]["des"].value;
     const pattern = /^[A-Fa-f]$/i;
 
     if( startNode.length == 1 &&  pattern.test(startNode)){

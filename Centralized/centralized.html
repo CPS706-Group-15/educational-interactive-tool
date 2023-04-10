@@ -30,7 +30,7 @@
     <section class="container-top">
       <div class="information">
         <div class="network-pic">
-          <img class="network-pic" src="/Assets/Network.png" width="477" height="253" >
+          <img class="network-pic" src="../Assets/Network.png" width="477" height="253" >
           
         </div>
         
@@ -71,18 +71,18 @@
       <!-- Dijkstra Algorihtm Steps  -->
       <div class="dijkstra_cards">
           <div id="dijkstra_cards1">
-            <img src="/Assets/slide1.png">
-            <img src="/Assets/slide2.png">
-            <img src="/Assets/slide3.png">
-            <img src="/Assets/slide4.png">
-            <img src="/Assets/slide5.png">
+            <img src="../Assets/slide1.png">
+            <img src="../Assets/slide2.png">
+            <img src="../Assets/slide3.png">
+            <img src="../Assets/slide4.png">
+            <img src="../Assets/slide5.png">
           </div>
           <div id="dijkstra_cards2">
-            <img src="/Assets/slide6.png">
-            <img src="/Assets/slide7.png">
-            <img src="/Assets/slide8.png">
-            <img src="/Assets/slide9.png">
-            <img src="/Assets/slide10.png"> 
+            <img src="../Assets/slide6.png">
+            <img src="../Assets/slide7.png">
+            <img src="../Assets/slide8.png">
+            <img src="../Assets/slide9.png">
+            <img src="../Assets/slide10.png"> 
           </div>     
       </div>
     </section>
@@ -243,16 +243,23 @@
             <div class="sourcebox">
      
 
-              <form name="myForm" >
-                <label for="source">Source:</label>
+              <form class="centralized-form" name="myForm" >
                 
-                <input  id="source" class="input" name="nm" type="text" placeholder="Enter Source from A to F">
+                
+                <label for="source">Source:</label>
+                <input  id="source" class="input" name="nm" type="text" placeholder="A to F">
+                
+                <label for="source">Destination:</label>
+                <input  id="source" class="input" name="des" type="text" placeholder="A to F">
                 
                 
               </form>
-              
+
+             
+              <div class="buttons">
               <button id="runAlgo" class="submit-btn"  value="Submit" onclick="validateForm();">Submit</button>
               <button id="resetAlgo" class="submit-btn"  value="Submit" onclick="refreshPage()">Reset</button>
+              </div>
             </div>
             <!-- explanation -->
             

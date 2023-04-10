@@ -215,8 +215,7 @@
 
 
   form {
-    
-    display: grid;
+
     padding:17px 5px 0px 15px;
   }
 
@@ -236,11 +235,15 @@
 
   .input{
     
-    width: 70%;
-    padding: 5px 5px;
+    width: 22%;
+    padding: 5px 15px;
     margin: 8px 0;
     
   }
+
+ 
+
+  
 
  
 
