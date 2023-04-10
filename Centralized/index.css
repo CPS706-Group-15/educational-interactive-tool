@@ -187,6 +187,10 @@
     position:relative;
     
   }
+
+  .buttons{
+    padding-left: 10%;
+  }
   .explanation{
     background-color:#FFFEF0;
     height: 64%;
