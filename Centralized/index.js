@@ -1,4 +1,4 @@
-function dijkstra(graph, startNode) {
+function dijkstra(graph, startNode, endNode) {
     gsap.registerEffect({
         name: "swapText",
         effect: (targets, config) => {
@@ -57,9 +57,11 @@ function dijkstra(graph, startNode) {
       
             for (let neighbor in graph[currentNode]) {
                 // Calculate the distance to the neighbor node
-                if (!processed.includes(neighbor) ){
+                /*if (!processed.includes(neighbor) ){*/
                 
                 const distance = distances[currentNode] + graph[currentNode][neighbor];
+                //console.log('currentNode: ', currentNode,' neighbor: ', neighbor, ' distance: ', distance, ' distances[neighbor]: ', distances[neighbor] )
+                
                 gsap.effects.text("#current-node" ,{text:currentNode});
                 gsap.effects.swapText("#neighbor-node",{text:neighbor});
                 gsap.effects.swapText("#currentNode" ,{text:currentNode}); 
@@ -119,7 +121,7 @@ function dijkstra(graph, startNode) {
                 }
 
 
-                }
+                /*}*/
  
                 await sleep(1000);
               }
@@ -130,9 +132,11 @@ function dijkstra(graph, startNode) {
         }
         
         gsap.effects.swapText("#algo-finished" ,{text: '<b style="color:crimson; text-shadow: 2px 4px 4px rgba(46,91,173,0.6);"> Algorithm Completed!</b>' });
-        
+        finalPath(shortestPaths,endNode);
+
     }
     firstloop();
+    
     
    
   }
@@ -144,18 +148,20 @@ const sleep = (time) => {
 function validateForm(){
    
 
-    let startNode = document.forms["myForm"]["nm"].value;
-    let desNode = document.forms["myForm"]["des"].value;
+    let startNode = document.forms["myForm"]["nm"].value.toUpperCase();
+    let desNode = document.forms["myForm"]["des"].value.toUpperCase();
+    
+    
     const pattern = /^[A-Fa-f]$/i;
 
-    if( startNode.length == 1 &&  pattern.test(startNode)){
-        let input = document.forms["myForm"]["nm"].value; 
+    if( startNode.length == 1 && desNode.length == 1 && pattern.test(startNode) && pattern.test(desNode) &&  (startNode != desNode)){
+       
         document.getElementById("runAlgo").disabled = true;
-        dijkstra(getGraph(), input.toUpperCase());
+        dijkstra(getGraph(), startNode, desNode);
               
     } 
     else{
-        alert("Enter Valid Source [A - F] ");
+        alert("Enter valid Source and Destination value [A-F].\nSource and Destination can not be the same.");
         return false;
     }
         
@@ -178,5 +184,33 @@ function validateForm(){
 function refreshPage(){
   window.location.reload();
 }
+
+
+function finalPath(shortestPaths,endNode){
+  final={};
+  let parent = shortestPaths[endNode] ;
+  final[endNode] = parent;
+ 
+  while(parent != undefined){
+    
+    let node = shortestPaths[parent]
+    final[parent] = node;
+    parent = node;
+  }
+
+  for (const [key, value] of Object.entries(shortestPaths)) {
+    if(!(key in final)){
+      elements = document.getElementsByClassName(key + value);
+      if (elements.length > 0) {
+        vector = '.' + key + value;
+      } else {
+        vector = '.' + value + key;
+      }
+      gsap.to(vector, {duration: 0, stroke: '#00527F'});
+    
+    }
+  }
+}
+
 
 
