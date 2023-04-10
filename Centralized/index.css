@@ -167,6 +167,14 @@
     font-weight: bold;
     color: #00527F;
   }
+
+  .explanation h2{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top:0px;
+    font-weight: bold;
+    color: #00527F;
+  }
   
   .infobox{
     margin: 3% 4% 4% 4%;
