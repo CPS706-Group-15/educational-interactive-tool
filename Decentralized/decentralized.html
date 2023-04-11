@@ -30,16 +30,16 @@
             <div class="decentralized-image">
               <svg width="549" height="564" viewBox="0 0 899 914" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="Group 12">
-                <line class="AC" id="AC" x1="137.088" y1="233.021" x2="451.088" y2="57.0215" stroke="#00527F" stroke-width="16"/>
-                <line class="BC" id="BC" x1="140.975" y1="257" x2="769.975" y2="255" stroke="#00527F" stroke-width="16"/>
-                <line class="BD" id="BD" x1="137.309" y1="614.902" x2="787.309" y2="276.902" stroke="#00527F" stroke-width="16"/>
-                <line class="DE" id="DE" x1="141" y1="641" x2="751" y2="641" stroke="#00527F" stroke-width="16"/>
-                <line class="CE" id="CE" x1="112.709" y1="276.912" x2="779.709" y2="625.912" stroke="#00527F" stroke-width="16"/>
-                <line class="CD" id="CD" x1="90" y1="602.001" x2="89.9608" y2="283.002" stroke="#00527F" stroke-width="16"/>
-                <line class="DF" id="DF" x1="97.2071" y1="664.196" x2="414.207" y2="860.196" stroke="#00527F" stroke-width="16"/>
-                <line class="EF" id="EF" x1="795.443" y1="668.653" x2="506.443" y2="861.653" stroke="#00527F" stroke-width="16"/>
-                <line class="AB" id="AB" x1="485.836" y1="85.9798" x2="754.836" y2="232.98" stroke="#00527F" stroke-width="16"/>
-                <line class="BE" id="BE" x1="817.001" y1="603.1" x2="813.001" y2="284.1" stroke="#00527F" stroke-width="16"/>
+                <line class="AC line" id="AC" x1="137.088" y1="233.021" x2="451.088" y2="57.0215" stroke="#00527F" stroke-width="16"/>
+                <line class="BC line" id="BC" x1="140.975" y1="257" x2="769.975" y2="255" stroke="#00527F" stroke-width="16"/>
+                <line class="BD line" id="BD" x1="137.309" y1="614.902" x2="787.309" y2="276.902" stroke="#00527F" stroke-width="16"/>
+                <line class="DE line" id="DE" x1="141" y1="641" x2="751" y2="641" stroke="#00527F" stroke-width="16"/>
+                <line class="CE line" id="CE" x1="112.709" y1="276.912" x2="779.709" y2="625.912" stroke="#00527F" stroke-width="16"/>
+                <line class="CD line" id="CD" x1="90" y1="602.001" x2="89.9608" y2="283.002" stroke="#00527F" stroke-width="16"/>
+                <line class="DF line" id="DF" x1="97.2071" y1="664.196" x2="414.207" y2="860.196" stroke="#00527F" stroke-width="16"/>
+                <line class="EF line" id="EF" x1="795.443" y1="668.653" x2="506.443" y2="861.653" stroke="#00527F" stroke-width="16"/>
+                <line class="AB line" id="AB" x1="485.836" y1="85.9798" x2="754.836" y2="232.98" stroke="#00527F" stroke-width="16"/>
+                <line class="BE line" id="BE" x1="817.001" y1="603.1" x2="813.001" y2="284.1" stroke="#00527F" stroke-width="16"/>
                 <g id="RA">
                 <g id="g3813">
                 <path id="path3759" d="M378.012 31.0983V77.5775H378.026C378.084 85.4775 389.842 93.1617 410.847 97.3961C442.24 103.725 482.383 99.9571 500.508 88.9952C506.47 85.3893 509.304 81.4621 509.31 77.5775V31.2138C509.29 35.089 506.455 39.0058 500.508 42.6026C482.383 53.5645 442.24 57.3179 410.847 50.9891C389.767 46.7395 378.001 39.0281 378.026 31.0983H378.012Z" fill="url(#paint0_linear_63_230)"/>
@@ -158,154 +158,92 @@
           
         <div class="infobox">
             <div class="sourcebox">
-              <h1 class="headingthree">Choose source router</h1>
+              <h1 class="headingthree">Choose Source Router</h1>
               <br>
               <div class="cen">
                 <label class="container only">A
-                  <input type="radio" name="radio" value="A">
+                  <input type="radio" name="source" value="A">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container only">B
-                  <input type="radio" name="radio" value="B">
+                  <input type="radio" name="source" value="B">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container">C
-                  <input type="radio" name="radio" value="C">
+                  <input type="radio" name="source" value="C">
                   <span class="checkmark"></span>
                 </label>
               </div>
               <br>
               <div class="cen">
                 <label class="container only">D
-                  <input type="radio" name="radio" value="D">
+                  <input type="radio" name="source" value="D">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container only">E
-                  <input type="radio" name="radio" value="E">
+                  <input type="radio" name="source" value="E">
                   <span class="checkmark"></span>
                 </label>
                 <label class="container ">F
-                  <input type="radio" name="radio" value="F">
+                  <input type="radio" name="source" value="F">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <div class="route">
+              <h1 class="headingthree">Choose Destination Router</h1>
+              <br>
+              <div class="cen">
+                <label class="container only">A
+                  <input type="radio" name="destination" value="A">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container only">B
+                  <input type="radio" name="destination" value="B">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">C
+                  <input type="radio" name="destination" value="C">
                   <span class="checkmark"></span>
                 </label>
               </div>
               <br>
               <div class="cen">
-                <button class="submit-btn" role="button" onClick={submit()}>Submit</button>
+                <label class="container only">D
+                  <input type="radio" name="destination" value="D">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container only">E
+                  <input type="radio" name="destination" value="E">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container ">F
+                  <input type="radio" name="destination" value="F">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cen">
+              <button class="submit-btn" role="button" onClick={submit()}>Submit</button>
+              <div class="space">dd</div>
+
+              <button class="submit-btn left" role="button" onClick="document.getElementById('details').scrollIntoView();">Details</button>
+            </div>
+            <div class="sourcebox">
+              <h1 class="headingthree">Final Cost</h1>
+              <div class="cen words" id="finalcost"> 
               </div>
             </div>
             <div class="route">
-              <h1 class="headingtwo">Algorithm Output</h1>
-              <div class="reasoning">
-                
-                <div style="display:flex;">
-                  <div style="width:50%;"">
-                    <p>
-                      <span>Current Node: <span>
-                      <span id="current-node"></span>
-                    <!--<p>Calculating Distance:<br><br></p> -->  
-                    <p>
-                      <span><br>Distance = </span>
-                      <span id="calculating-distance"></span>    
-                    </p>
-                  </div>
-                 <div style="width:50%;">
-                  <p>
-                    
-                    <span>Neighbor Node: </span>
-                    <span id="neighbor-node"></span></p>
-                  
-                  <!--<p>Calculating Distance:<br><br></p> -->  
-                  <p>
-                    <br>
-                    <span id="SourceNode">S </span>
-                    <span> &#8594 </span>
-                    <span id="currentNode">?</span>
-                    <span> &#8594 </span>
-                    <span id="neighborNode">?</span>
-                  </p>
-                 </div>
-                </div>
-                <p><br>If the calculated distance is <b>less</b> than the shortest known distance, the shortest distance is updated<br><br></p>
-                <p id="algo-finished"><span>Distance <  Shortest known Distance =  <span><span id="calculating-distance2"></span></p>
-                
-              </div>
-              <div class="cen">
-              <svg class="arrays" width="280" height="115" viewBox="0 0 774 312" fill="none" xmlns="http://www.w3.org/2000/svg">  
-                <g id="Group 13">
-                <rect id="PRA" x="194.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="PRB" x="292.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="PRC" x="388.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="PRD" x="484.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="PRE" x="581.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="PRF" x="677.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                
-                <text id="PVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVA" x="232" y="170.2">-1</tspan></text>
-                <text id="PVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVB" x="332" y="170.2">-1</tspan></text>
-                <text id="PVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVC" x="428" y="170.2">-1</tspan><tspan x="428" y="218.2">-1</tspan></text>
-                <text id="PVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVD" x="518" y="170.2">-1</tspan><tspan x="518" y="218.2">-1</tspan></text>
-                <text id="PVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVE" x="612" y="170.2">-1</tspan><tspan x="612" y="218.2">-1</tspan></text>
-                <text id="PVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVF" x="708" y="170.2">-1</tspan><tspan x="708" y="218.2">-1</tspan></text>
-                
-                <text id="PARENT" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="2" y="167.2">Parent:</tspan></text>
-                <text id="PLA" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLA" x="225" y="114.2">A</tspan></text>
-                <text id="PLB" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLB" x="327" y="114.2">B</tspan></text>
-                <text id="PLC" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLC" x="422" y="114.2">C</tspan></text>
-                <text id="PLD" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLD" x="515" y="114.2">D</tspan></text>
-                <text id="PLE" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLE" x="612" y="114.2">E</tspan></text>
-                <text id="PLF" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLF" x="707" y="114.2">F</tspan></text>
-                <rect id="IA" x="194.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="IB" x="292.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="IC" x="388.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="ID" x="484.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="IE" x="581.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                <rect id="IF" x="677.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                
-                <text id="DVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVA" x="228" y="291.6">&#x221e;</tspan></text>
-                <text id="DVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVB" x="330" y="291.6">&#x221e;</tspan></text>
-                <text id="DVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVC" x="426" y="291.6">&#x221e;</tspan></text>
-                <text id="DVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVD" x="521" y="291.6">&#x221e;</tspan></text>             
-                <text id="DVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVE" x="617" y="291.6">&#x221e;</tspan></text>
-                <text id="DVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVF" x="708" y="291.6">&#x221e;</tspan></text>
-                
-                <text id="DISTANCES" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="288.2">Distances:</tspan></text>
-                <text id="DLA" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLA" x="225" y="237.2">A</tspan></text>
-                <text id="DLB" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLB" x="327" y="237.2">B</tspan></text>
-                <text id="DLC" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLC" x="422" y="237.2">C</tspan></text>
-                <text id="DLD" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLD" x="515" y="237.2">D</tspan></text>
-                <text id="DLE" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLE" x="612" y="237.2">E</tspan></text>
-                <text id="DLF" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLF" x="707" y="237.2">F</tspan></text>
-                </g>
-                <defs>
-                <filter id="filter0_d_92_122" x="614.08" y="273.28" width="33.812" height="20.42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="4"/>
-                <feGaussianBlur stdDeviation="2"/>
-                <feComposite in2="hardAlpha" operator="out"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_92_122"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_92_122" result="shape"/>
-                </filter>
-                <filter id="filter1_d_92_122" x="614.872" y="31.808" width="23.8398" height="13.112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="4"/>
-                <feGaussianBlur stdDeviation="2"/>
-                <feComposite in2="hardAlpha" operator="out"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_92_122"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_92_122" result="shape"/>
-                </filter>
-                </defs>
-                </svg>
+              <h1 class="headingthree">Path</h1>
+              <div class="cen words" id="path"> 
               </div>
             </div>
           </div>
       </div>
 
       <!-- Wave SVG-->
-      <svg class="waves"  viewBox="0 0 1844 322" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="waves"  viewBox="0 0 1844 322" fill="none" xmlns="http://www.w3.org/2000/svg" >
         <g id="wave 1" clip-path="url(#clip0_41_5)" filter="url(#filter0_d_41_5)">
           <g id="Group 4">
             <g id="wave 2" clip-path="url(#clip1_41_5)" filter="url(#filter1_d_41_5)">
@@ -316,10 +254,16 @@
         </g>
     </section> 
     
-    <section class="container-middle">
+    <section class="container-middle" id="details">
         <h1 class="headingMiddle">Further Details</h1>
         <h3 class="size" id="des"></h3>
         <div id="table-div"></div>
+        <h3 class="size" id="desT"></h3>
+        <h3 class="sizeTT" id="desTT"></h3>
+        <br>
+        <div class="cen">
+          <button class="submit-btn left" role="button" onClick="document.getElementById('steps').scrollIntoView();">Steps</button>
+        </div>
     </section>
 
     <section class="container-bottom">
@@ -334,22 +278,18 @@
         </g>
       </svg>
       
-      <h1 class="headingEnd">Step by step instruction for the algorithm: </h1>
-      <div class="end">
-        <div class="endI">
-          <br>
-          <ol class="para">
-            <li>Initialize the distance vector for each node in the network, with the distance to itself set to 0, and the distance to all other nodes set to infinity.</li>
-            <li>Exchange distance vectors with the neighboring nodes. Each node sends its own distance vector to its neighbors.</li>
-            <li>Update the distance vector for each node based on the information received from its neighbors. The updated distance for each node is the minimum of the distance to that node calculated from its neighbors, and the distance currently stored in the node's distance vector.</li>
-            <li>Repeat steps 2 and 3 until there are no more updates to the distance vectors. This means that the shortest path between all pairs of nodes has been found.</li>
-            <li>If there is a negative cycle in the graph, the algorithm will not converge and will continue to update the distance vectors indefinitely. In this case, it is necessary to detect and handle negative cycles to avoid infinite loops.</li>
-            <li>Once the algorithm has converged, the shortest path between any two nodes can be found by following the links in the path with the smallest distance between adjacent nodes.</li>
-          </ol>
+      <h1 class="headingEnd" id="steps">Step by step instruction for the algorithm: </h1>
+      <div class="distanceVector_cards">
+        <div id="distanceVector_cards1">
+          <img src="./Assets/Step1.png">
+          <img src="./Assets/Step2.png">
+          <img src="./Assets/Step3.png">
         </div>
-        <div class="endP">
-          <img class="imagenet" src="./Assets/neural-network.png">
-        </div>
+        <div id="distanceVector_cards2">
+          <img src="./Assets/Step4.png">
+          <img src="./Assets/Step5.png">
+          <img src="./Assets/Step6.png">
+        </div>     
       </div>
 
       <div>
