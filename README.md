@@ -1,7 +1,7 @@
 # educational-interactive-tool
-This an interactive website teaching about centralized and decentralized algorithms
+This an interactive website teaching about centralized and decentralized algorithms.
 
-This website is meant to be used on a computer, it is not safe for phone or tablet
+This website is meant to be used on a computer, it is not safe for phone or tablet.
 
 # Usage
 ## Hosted site
