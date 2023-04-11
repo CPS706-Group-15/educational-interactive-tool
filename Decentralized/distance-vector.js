@@ -58,11 +58,10 @@ const graph = {
 
 
 function submit() {
+  
+const myLines = document.querySelectorAll('.line');
+myLines.forEach(line => line.setAttribute('stroke', "#00527F"));
 
-// var reloadDelay = 2000; // Delay in milliseconds
-// setTimeout(function() {
-//     location.reload();
-// }, reloadDelay);
 let path = []
 let source = document.querySelector('input[name="source"]:checked');
 let destination = document.querySelector('input[name="destination"]:checked');
@@ -77,39 +76,82 @@ if (source && destination && source.value === destination.value) {
     path = result.path;
     cost = result.distance;
     commaPath = path.join(" → ")
-    // alert(result.distance);
 }
+    
 document.getElementById("finalcost").innerHTML = "The final cost from " + source.value + " to " + destination.value + " is " + cost;
 document.getElementById("path").innerHTML = "The path from " + source.value + " to " + destination.value + " is " + commaPath;
-    
-    
+
+for (var i = 0; i<path.length-1; i++ )
+{
+  try {
+      (function (i) {
+          setTimeout(function () {
+              var element = document.getElementById(path[i] + path[i + 1]);
+              if (element) {
+                element.setAttribute('stroke', '#b00f0c');
+              } else {
+                var element = document.getElementById(path[i+1] + path[i]);
+                element.setAttribute('stroke', '#b00f0c');
+              }      
+          }, i * 250);
+      })(i);
+  }
+  catch(err) {
+    (function (i) {
+        setTimeout(function () {
+            var element = document.getElementById(path[i+1] + path[i]);
+            element.setAttribute('stroke', '#b00f0c');
+        }, i * 250);
+    })(i);
+  }
+}
+
+     
 // -------------------- table -----------
-let distances = graph.getShortestPaths(graph.routers.get(radioOption));
+let des = document.getElementById("des");
+des.textContent = `Router ${source.value} Routing Table`;
+
+let desT = document.getElementById("desT");
+desT.textContent = `It needed to go to ${destination.value}, so it looked at the routing table for that node.`;
+
+let desTT = document.getElementById("desTT");
+desTT.textContent = `Then went accordingly given the cost at ${destination.value}.`;
     
-// Select the table div container and remove any existing tables
-let tableDiv = document.getElementById("table-div");
-while (tableDiv.firstChild) {
-  tableDiv.removeChild(tableDiv.firstChild);
-}
-
-// Create a new table and append it to the table div container
+let nodes = ["A", "B", "C", "D", "E", "F"];
+let table_div = document.getElementById("table-div");
 let table = document.createElement("table");
-tableDiv.appendChild(table);
-
-// Create table header row
-let headerRow = table.insertRow();
-let headerRouterName = headerRow.insertCell();
-headerRouterName.textContent = "Router Name";
-let headerDistance = headerRow.insertCell();
-headerDistance.textContent = "Distance";
-
-// Add data rows to the table
-for (let [routerName, distance] of distances.entries()) {
-  let row = table.insertRow();
-  let routerNameCell = row.insertCell();
-  routerNameCell.textContent = routerName;
-  let distanceCell = row.insertCell();
-  distanceCell.textContent = distance === Infinity ? "Unreachable" : distance;
+while (table_div.firstChild) {
+    table_div.removeChild(table_div.firstChild);
 }
+table_div.appendChild(table);
+let headerRow = table.insertRow(0);
+let headerCell1 = headerRow.insertCell(0);
+let headerCell2 = headerRow.insertCell(1);
+headerCell1.innerHTML = "Node";
+headerCell2.innerHTML = "Cost";
+
+for (let i = 0; i < nodes.length; i++)
+{   
+    let totalCost = 0;
+    if (source.value == nodes[i]) {
+        totalCost = 0;
+    } else {
+        totalCost = bellmanFord(graph, source.value, nodes[i]).distance;
+    }
+    let nRow = table.insertRow(-1);
+    let cellOne = nRow.insertCell(0);
+    let cellTwo = nRow.insertCell(1);
+
+    cellOne.innerHTML = nodes[i];
+    cellTwo.innerHTML = totalCost;
+
+    if (nodes[i] == destination.value) {
+        cellOne.style.backgroundColor = "maroon";
+        cellOne.style.color = "white";
+        cellTwo.style.backgroundColor = "maroon";
+        cellTwo.style.color = "white";
+      }
+}
+    
 
 }
