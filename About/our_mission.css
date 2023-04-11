@@ -2,10 +2,20 @@
     padding-top: 0.5em;
     font-family: 'Inter', sans-serif;
     font-size: 64px;
+    color: #7F9F7E;
     font-weight: bold;
     background-color: #FFFEF0;
 }
 
+.statement{
+    padding-top: -252px;
+    padding-left: 120px;
+    padding-right: 10em;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    color: #515e53;
+    line-height: 2.5;
+}
 .container {
     display: flex;
     align-items: center;
@@ -25,14 +35,7 @@
     -o-border-radius: 53px;
 }
 
-.statement{
-    padding-top: -252px;
-    padding-left: 120px;
-    padding-right: 10em;
-    font-family: 'Inter', sans-serif;
-    font-size: 32px;
-    line-height: 2.5;
-}
+
 
 .container-top{
     background-color: #FFFEF0;
