@@ -40,7 +40,7 @@ function dijkstra(graph, startNode, endNode) {
 
     gsap.effects.swapText('#TDV'+ startNode ,{text:'0'});
     gsap.effects.swapText('#TPV' + startNode ,{text:'0'});
-    gsap.effects.swapText("#SourceNode" , {text: startNode });
+    //gsap.effects.swapText("#SourceNode" , {text: startNode });
   
     const firstloop = async () => {
       
@@ -57,15 +57,16 @@ function dijkstra(graph, startNode, endNode) {
       
             for (let neighbor in graph[currentNode]) {
                 // Calculate the distance to the neighbor node
-                /*if (!processed.includes(neighbor) ){*/
+               
+                /* if (!processed.includes(neighbor) ){ */
                 
                 const distance = distances[currentNode] + graph[currentNode][neighbor];
                 //console.log('currentNode: ', currentNode,' neighbor: ', neighbor, ' distance: ', distance, ' distances[neighbor]: ', distances[neighbor] )
                 
                 gsap.effects.text("#current-node" ,{text:currentNode});
                 gsap.effects.swapText("#neighbor-node",{text:neighbor});
-                gsap.effects.swapText("#currentNode" ,{text:currentNode}); 
-                gsap.effects.swapText("#neighborNode" ,{text:neighbor});
+                //gsap.effects.swapText("#currentNode" ,{text:currentNode}); 
+                //gsap.effects.swapText("#neighborNode" ,{text:neighbor});
                 gsap.effects.swapText("#calculating-distance" ,{text: distance});
                
                 //creating the string for updating the distance (text explanation)
@@ -121,7 +122,7 @@ function dijkstra(graph, startNode, endNode) {
                 }
 
 
-                /*}*/
+                //}proces
  
                 await sleep(1000);
               }
