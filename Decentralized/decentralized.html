@@ -239,99 +239,8 @@
               <div class="cen words" id="path"> 
               </div>
             </div>
-            <p><br>If the calculated distance is <b>less</b> than the shortest known distance, the shortest distance is updated<br><br></p>
-            <p id="algo-finished"><span>Distance <  Shortest known Distance =  <span><span id="calculating-distance2"></span></p>
-          
-            <br>
-            
           </div>
-          
-          <!-- SVG FOR PARENT ARRAY AND DISTANCES ARRAY -->
-          <svg class="arrays" width="774" height="312" viewBox="0 0 774 312" fill="none" xmlns="http://www.w3.org/2000/svg">  
-            <g id="Group 13">
-            <rect id="PRA" x="194.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="PRB" x="292.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="PRC" x="388.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="PRD" x="484.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="PRE" x="581.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="PRF" x="677.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            
-            <text id="PVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVA" x="232" y="170.2">-1</tspan></text>
-            <text id="PVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVB" x="332" y="170.2">-1</tspan></text>
-            <text id="PVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVC" x="428" y="170.2">-1</tspan><tspan x="428" y="218.2">-1</tspan></text>
-            <text id="PVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVD" x="518" y="170.2">-1</tspan><tspan x="518" y="218.2">-1</tspan></text>
-            <text id="PVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVE" x="612" y="170.2">-1</tspan><tspan x="612" y="218.2">-1</tspan></text>
-            <text id="PVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVF" x="708" y="170.2">-1</tspan><tspan x="708" y="218.2">-1</tspan></text>
-            
-            <text id="PARENT" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="2" y="167.2">Parent:</tspan></text>
-            <text id="PLA" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLA" x="225" y="114.2">A</tspan></text>
-            <text id="PLB" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLB" x="327" y="114.2">B</tspan></text>
-            <text id="PLC" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLC" x="422" y="114.2">C</tspan></text>
-            <text id="PLD" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLD" x="515" y="114.2">D</tspan></text>
-            <text id="PLE" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLE" x="612" y="114.2">E</tspan></text>
-            <text id="PLF" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLF" x="707" y="114.2">F</tspan></text>
-            <rect id="IA" x="194.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="IB" x="292.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="IC" x="388.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="ID" x="484.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="IE" x="581.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            <rect id="IF" x="677.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-            
-            <text id="DVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVA" x="228" y="291.6">&#x221e;</tspan></text>
-            <text id="DVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVB" x="330" y="291.6">&#x221e;</tspan></text>
-            <text id="DVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVC" x="426" y="291.6">&#x221e;</tspan></text>
-            <text id="DVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVD" x="521" y="291.6">&#x221e;</tspan></text>             
-            <text id="DVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVE" x="617" y="291.6">&#x221e;</tspan></text>
-            <text id="DVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVF" x="708" y="291.6">&#x221e;</tspan></text>
-            
-            <text id="DISTANCES" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="288.2">Distances:</tspan></text>
-            <text id="DLA" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLA" x="225" y="237.2">A</tspan></text>
-            <text id="DLB" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLB" x="327" y="237.2">B</tspan></text>
-            <text id="DLC" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLC" x="422" y="237.2">C</tspan></text>
-            <text id="DLD" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLD" x="515" y="237.2">D</tspan></text>
-            <text id="DLE" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLE" x="612" y="237.2">E</tspan></text>
-            <text id="DLF" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLF" x="707" y="237.2">F</tspan></text>
-            </g>
-            <defs>
-            <filter id="filter0_d_92_122" x="614.08" y="273.28" width="33.812" height="20.42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="2"/>
-            <feComposite in2="hardAlpha" operator="out"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_92_122"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_92_122" result="shape"/>
-            </filter>
-            <filter id="filter1_d_92_122" x="614.872" y="31.808" width="23.8398" height="13.112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="2"/>
-            <feComposite in2="hardAlpha" operator="out"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_92_122"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_92_122" result="shape"/>
-            </filter>
-            </defs>
-            </svg>
-
-
-                
-           
-        </div>
-
-          
-        </div>
-       
-        
-        
       </div>
-
-       
-      
-        </div> 
-    
 
       <!-- Wave SVG-->
       <svg class="waves"  viewBox="0 0 1844 322" fill="none" xmlns="http://www.w3.org/2000/svg" >
@@ -368,24 +277,7 @@
         </g>
         </g>
       </svg>
-
-      <div id="distanceVector" class="distanceVector" >
-        <h1>How Does Distance Vector Algorithm Work? </h1> 
-      </div>
-      <!-- Dijkstra Algorihtm Steps  -->
-      <div class="distanceVector_cards">
-          <div id="distanceVector_cards1">
-            <img src="../Assets/Step1.png">
-            <img src="../Assets/Step2.png">
-            <img src="../Assets/Step3.png">
-          </div>
-          <div id="distanceVector_cards2">
-            <img src="../Assets/Step4.png">
-            <img src="../Assets/Step5.png">
-            <img src="../Assets/Step6.png">
-          </div>     
-      </div>
-     
+      
       <h1 class="headingEnd" id="steps">Step by step instruction for the algorithm: </h1>
       <div class="distanceVector_cards">
         <div id="distanceVector_cards1">
@@ -402,7 +294,7 @@
 
       <div>
         
-      </div>-->
+      </div>
 
     </section>
 
