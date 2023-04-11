@@ -1,0 +1,305 @@
+/* Centralized  CSS*/
+
+
+  .container-top{
+    background-color: #FFFEF0;
+    height:120vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .container-top .waves{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   
+  }
+
+  .information{
+    display: flex;
+  }
+
+  .network-pic{
+    padding-top: 74px;
+    padding-left:13px;
+   
+    display: flex;
+    justify-content: left;
+  }
+
+  .network-verbiage{
+    padding: 40px;
+    justify-content: right;
+    font-family: 'Inter', sans-serif;
+    
+  }
+
+  .network-verbiage h1{
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: #7F9F7E;
+    font-size: 40px;
+  }
+
+  .network-verbiage p{
+    font-weight:400;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    color: #515e53;
+    
+  }
+
+  .network-verbiage button{
+    width: 180px;
+    height: 60px;
+    background: #FFFFF9;
+    border: 7px solid #658163;
+    border-radius: 55px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #748A70;
+    padding: 1em 1em 1em 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .network-verbiage button:hover{
+    border: 6px solid #658163;
+    background: #658163;
+    color: #FFFEF0;
+  }
+
+  
+  .container-middle{
+    background-color: #7F9F7E; 
+    height:110vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .dijkstra{
+    
+    padding-left:70px;
+   
+    width: 90%;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFEF0;
+  }
+  .dijkstra h1{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+
+   /*cards*/
+
+ .dijkstra_cards{
+  display: inline;
+}
+#dijkstra_cards1{
+  display:flex;
+  justify-content: center;
+}
+
+#dijkstra_cards1 img{
+  width:15%;
+  height:20%;
+  
+}
+#dijkstra_cards2{
+  display: flex;
+  justify-content: center;
+}
+
+#dijkstra_cards2 img{
+  width:15%;
+  height:20%;
+}
+
+  
+  
+ .container-bottom{
+   
+    background-color:#FFFEF0;
+   
+  }
+  
+  .container-parent{
+    display: flex;
+    width:100%;
+    height:120vh;
+    background-color:#FFFEF0;
+   
+  }
+  
+
+  .network-container{
+    margin: 3% 4% 4% 4%;
+    width: 70%;
+    height:90vh;
+    border-radius: 25px;
+    background-color:#D2E2C6;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    position:relative;
+  }
+ 
+  .network{
+    position:absolute;
+    left:0; 
+    top:70px; 
+    width:100%; 
+    height:80%;
+  }
+
+  .heading{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top:20px;
+    font-weight: bold;
+    color: #00527F;
+  }
+
+  .explanation h2{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top:0px;
+    font-weight: bold;
+    color: #00527F;
+  }
+  
+  .infobox{
+    margin: 3% 4% 4% 4%;
+    width: 53%;
+    height:90vh;
+    border-radius: 25px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    
+    background-color: #7F9F7E;
+  }
+  .sourcebox{
+    background-color: #D2E2C6;
+    height: 25%;
+    border-radius: 25px;
+    margin: 5% 5% 2% 5%;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    position:relative;
+    
+  }
+
+  .buttons{
+    padding-left: 10%;
+  }
+  .explanation{
+    background-color:#FFFEF0;
+    height: 64%;
+    border-radius: 25px;
+    margin: 3% 5% 3% 5%;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    position:relative;
+    
+  }
+
+  .arrays{
+    position:absolute; 
+    top:28%; 
+    left:15px;
+    width:90%; 
+    height:90%;
+  }
+
+ .reasoning{
+  position:absolute;
+  top:50px; 
+  left:15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: small;
+ }
+
+
+  form {
+
+    padding:17px 5px 0px 15px;
+  }
+
+  label{
+    width: 90px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size:small;
+    font-weight: bold;
+    color: #7F9F7E;
+  }
+
+  button:disabled {
+    background: #F5F5F5;
+    color : #C3C3C3;
+}
+
+  .input{
+    
+    width: 22%;
+    padding: 5px 15px;
+    margin: 8px 0;
+    
+  }
+
+ 
+
+  
+
+ 
+
+
+
+  .submit-btn {
+    width:130px;
+    align-items: right;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 5px 5px;
+    position: relative;
+    text-align: center;
+    margin-top:10px;
+    margin-left:20px;
+    
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    
+  }
+  
+  .submit-btn {
+    background: #F6F9FE;
+    color: #174ea6;
+  }
+
+ 
+
+
+
+
+  
