@@ -59,8 +59,8 @@ const graph = {
 
 function submit() {
   
-const myLines = document.querySelectorAll('.line');
-myLines.forEach(line => line.setAttribute('stroke', "#00527F"));
+const lines = document.querySelectorAll('.line');
+lines.forEach(line => line.setAttribute('stroke', "#00527F"));
 
 let path = []
 let source = document.querySelector('input[name="source"]:checked');
