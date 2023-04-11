@@ -38,6 +38,23 @@ html {
 }
 
 
+.card-centralized{
+    background-color: #719370;
+    width: 25%;
+    margin: 20px;
+    border-radius: 25px;
+    overflow: hidden;
+    color: #FFFFF9;
+}
+
+.card-centralized img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
 .green {
     background-color: #719370;
     width: 25%;
