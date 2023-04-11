@@ -65,21 +65,49 @@ myLines.forEach(line => line.setAttribute('stroke', "#00527F"));
 let path = []
 let source = document.querySelector('input[name="source"]:checked');
 let destination = document.querySelector('input[name="destination"]:checked');
+let sourceP = document.querySelectorAll('input[type="radio"][name="source"]');
+let destinationP = document.querySelectorAll('input[type="radio"][name="destination"]');
 let cost = 0;
 let commaPath = "";
+let sourceSelected = false;
+let destinationSelected = false;
 
-if (source && destination && source.value === destination.value) {
-    cost = 0;
-    path.push("A");
-} else {
-    const result = bellmanFord(graph, source.value, destination.value);
-    path = result.path;
-    cost = result.distance;
-    commaPath = path.join(" → ")
+for (let i = 0; i < sourceP.length; i++) {
+  if (sourceP[i].checked) {
+    sourceSelected = true;
+    break;
+  }
 }
-    
-document.getElementById("finalcost").innerHTML = "The final cost from " + source.value + " to " + destination.value + " is " + cost;
-document.getElementById("path").innerHTML = "The path from " + source.value + " to " + destination.value + " is " + commaPath;
+
+for (let i = 0; i < destinationP.length; i++) {
+  if (destinationP[i].checked) {
+    destinationSelected = true;
+    break;
+  }
+}
+
+if (!sourceSelected && !destinationSelected) {
+    alert("Please choose a source and destination router!");
+} else if (!sourceSelected) {
+    alert("Please choose a source router!");
+} else if (!destinationSelected) {
+    alert("Please choose a destination router!");
+} else {
+    if (source && destination && source.value === destination.value) {
+        cost = 0;
+        path.push("A");
+    }
+    else {
+        const result = bellmanFord(graph, source.value, destination.value);
+        path = result.path;
+        cost = result.distance;
+        commaPath = path.join(" → ")
+    }
+
+    document.getElementById("finalcost").innerHTML = "The final cost from " + source.value + " to " + destination.value + " is " + cost;
+    document.getElementById("path").innerHTML = "The path from " + source.value + " to " + destination.value + " is " + commaPath;
+}
+
 
 for (var i = 0; i<path.length-1; i++ )
 {
