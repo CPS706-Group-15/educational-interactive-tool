@@ -1,5 +1,8 @@
 /* Centralized  CSS*/
 
+html {
+  scroll-behavior: smooth;
+}
 
   .container-top{
     background-color: #FFFEF0;
@@ -46,7 +49,7 @@
   .network-verbiage p{
     font-weight:400;
     font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+    font-size: 25px;
     color: #515e53;
     
   }
