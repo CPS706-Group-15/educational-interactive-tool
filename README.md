@@ -1,6 +1,8 @@
 # educational-interactive-tool
 This an interactive website teaching about centralized and decentralized algorithms
 
+This website is meant to be used on a computer, it is not safe for phone or tablet
+
 # Usage
 ## Hosted site
 This is the website: https://cps706-group-15.github.io/educational-interactive-tool/
