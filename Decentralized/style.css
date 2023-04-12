@@ -16,13 +16,13 @@
 
 .container-top{
     background-color: #FFFEF0;
-    height:140vh;
+    height:auto;
     background-size: cover;
     background-position: center;
     overflow: hidden;
     position: relative;
     padding-top: 1em;
-    padding-bottom: 2em;
+    padding-bottom: 15em;
   }
 
   .container-top .waves{
@@ -168,11 +168,11 @@
 
   .submit-btn {
     width: 12em;
-    background: #FFFFF9;
-    border: 3px solid #658163;
+    background: #658163;
+    border: 3px solid #FFFFF9;
     border-radius: 24px;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-    color: #748A70;
+    color: #FFFEF0;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
@@ -184,8 +184,8 @@
 
   .submit-btn:hover {
     border: 3px solid #658163;
-    background: #658163;
-    color: #FFFEF0;
+    background: #FFFEF0;
+    color: #658163;
   }
 
   .decentralized-image {
