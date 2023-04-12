@@ -22,9 +22,8 @@
         </nav>
     </header>
 
-    <section class="container-top">
+    <section class="container-top" id="container-top">
       <div class="cen1">
-      
         <div id="network" class="network">
             <h1 class="heading">Decentralized Algorithm</h1>
             <div class="decentralized-image">
@@ -347,8 +346,8 @@
                   </svg>
                 </div> 
               <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
-                <div class="option" id="option6">
-                  <svg width="549" height="564" viewBox="0 0 899 914" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="option" id="option6" style="display:none">
+                  <svg width="549" height="564" viewBox="0 0 899 914" fill="none" xmlns="http://www.w3.org/2000/svg" >
                     <g id="Group 12">
                     <line class="AC line" id="AC" x1="137.088" y1="233.021" x2="451.088" y2="57.0215" stroke="#00527F" stroke-width="16"/>
                     <line class="BC line" id="BC" x1="140.975" y1="257" x2="769.975" y2="255" stroke="#00527F" stroke-width="16"/>
@@ -472,13 +471,13 @@
                 </div>
               <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
             </div>
+            <h1 class="heading" id="customizeMes"></h1>
         </div>
         <div class="infobox">
           <div class="sourcebox">
             <h1 class="headingthree">Router Information</h1>
-            <div class="cen words" id="finalcost" style=" line-height: 25px;"> The routers ranges from A, B, C, D, E, and F. 
+            <div class="cen words" style=" line-height: 25px;"> The routers ranges from A, B, C, D, E, and F. 
               So, if you are choosing only 4 routers, it can only go up to D. Please choose accordingly!
-
             </div>
           </div>
           <div class="route">
@@ -509,23 +508,26 @@
                 <span class="checkmark"></span>
               </label>
               <label class="container" >6
-                <input type="radio" name="amount"  value="option6" checked>
+                <input type="radio" name="amount"  value="option6">
                 <span class="checkmark"></span>
               </label>
             </div>
+          </div>
+          <div class="cen">
+            <button class="submit-btn" role="button" onClick={submitR()}>Submit</button>
           </div>
             <div class="sourcebox">
               <h1 class="headingthree">Choose Source Router</h1>
               <br>
               <div class="cen">
-                <input id="source" type="text" style="font-weight: bold; border: 3px solid #658163; background: #FFFEF0; color: #658163; font-size: 18px; padding: 15px 15px; text-transform: uppercase; text-align: center;">
+                <input id="source" type="text" placeholder="A to F" style="font-weight: bold; border: 3px solid #658163; background: #FFFEF0; color: #658163; font-size: 18px; padding: 15px 15px; text-transform: uppercase; text-align: center;">
               </div>
             </div>
             <div class="route">
               <h1 class="headingthree">Choose Destination Router</h1>
               <br>
               <div class="cen">
-                <input id="destination" type="text" style="font-weight: bold; border: 3px solid #afbeae; background: #658163; color: #FFFEF0; font-size: 18px; padding: 15px 15px; text-transform: uppercase; text-align: center;">
+                <input id="destination" placeholder="A to F" type="text" style="font-weight: bold; border: 3px solid #afbeae; background: #658163; color: #FFFEF0; font-size: 18px; padding: 15px 15px; text-transform: uppercase; text-align: center;">
               </div>
             </div>
             <div class="cen">
@@ -544,9 +546,23 @@
               <div class="cen words" id="path"> 
               </div>
             </div>
-          </div>
+        </div>
       </div>
+    </section>
 
+    <section class="container-middle-middle" id="customize">
+      <div class="cen1">
+        <div id="customize" class="customize">
+          <div class="cen" id="customization">
+
+          </div>
+          <div class="cen">
+            <button class="submit-btn" role="button" onClick={submitC()}>Submit</button>
+            <div class="space">dd</div>
+            <button class="submit-btn left" role="button" onClick="document.getElementById('container-top').scrollIntoView();">Get back</button>
+          </div>
+        </div>
+      </div>
       <!-- Wave SVG-->
       <svg class="waves"  viewBox="0 0 1844 322" fill="none" xmlns="http://www.w3.org/2000/svg" >
         <g id="wave 1" clip-path="url(#clip0_41_5)" filter="url(#filter0_d_41_5)">
@@ -557,7 +573,7 @@
           <path id="Vector_2" d="M-184 186.436L-116.4 154.961C-48.8 123.957 86.4 60.2994 221.6 73.2667C356.8 86.2341 492 173.469 627.2 173.823C762.4 173.469 897.6 86.2341 1032.8 79.5147C1168 73.2668 1303.2 148.713 1438.4 167.575C1573.6 186.436 1708.8 148.713 1776.4 129.852L1844 110.99V337.329H1776.4C1708.8 337.329 1573.6 337.329 1438.4 337.329C1303.2 337.329 1168 337.329 1032.8 337.329C897.6 337.329 762.4 337.329 627.2 337.329C492 337.329 356.8 337.329 221.6 337.329C86.4 337.329 -48.8 337.329 -116.4 337.329H-184V186.436Z" fill="#7F9F7E"/>
           </g>
         </g>
-    </section> 
+    </section>
     
     <section class="container-middle" id="details">
         <h1 class="headingMiddle">Further Details</h1>

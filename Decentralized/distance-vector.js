@@ -1,3 +1,7 @@
+// Global variables
+let temp = null;
+let totalItem = 0;
+
 function bellmanFord(graph, sourceNode, destinationNode) {
   let distance = {};
   let predecessor = {};
@@ -180,7 +184,7 @@ function table(source, destination, graph, nodes) {
   }
 }
 
-function animation(path, option, optionTemp) {
+function animation(path, option) {
 
   let lines = document.querySelectorAll('.line');
   lines.forEach(line => line.setAttribute('stroke', "#00527F"));
@@ -203,42 +207,123 @@ function animation(path, option, optionTemp) {
   }
 }
 
+function validateRouters() {
+  let amount = document.getElementsByName("amount");
+  let checked = false;
+  for (let i = 0; i < amount.length; i++) {
+    if (amount[i].checked) {
+      checked = true;
+      break;
+    }
+  }
+  if (!checked) {
+    alert("Please choose a number of routers!");
+    return false;
+  }
+  return true;
+}
+
+function createInputBoxesAndLabels() {
+  let option = document.getElementById(temp);
+  let svg = option.querySelector("svg");
+  let lines = svg.getElementsByTagName("line");
+  let div = document.getElementById("customization");
+
+  // Loop through each line
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+
+    // Create a new input element
+    let input = document.createElement("input");
+
+    // Set the input's value to the current line's x1 coordinate
+    input.value = line.getAttribute("x1");
+
+    // Set the input's type to "number"
+    input.type = "number";
+
+    // Set the input's style properties
+    input.style.fontWeight = "bold";
+    input.style.border = "3px solid #658163";
+    input.style.background = "#FFFEF0";
+    input.style.color = "#658163";
+    input.style.fontSize = "18px";
+    input.style.padding = "15px 15px";
+    input.style.textTransform = "uppercase";
+    input.style.textAlign = "center";
+
+    // Create a new label element
+    let label = document.createElement("label");
+
+    // Set the label's text to the line's id
+    label.textContent = line.id;
+
+    // Set the label's style properties
+    label.style.textAlign = "center";
+    label.style.fontFamily = "'Inter', sans-serif";
+    label.style.fontSize = "1.5em";
+    label.style.fontWeight = "bold";
+    label.style.paddingBottom = "0.5em";
+    label.style.color = "#658163";
+
+    // Append the label and input elements to a new SVG group element
+    let group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    group.appendChild(label);
+    group.appendChild(input);
+
+    // Position the group element at the same coordinates as the line
+    let x = parseInt(line.getAttribute("x1"));
+    let y = parseInt(line.getAttribute("y1"));
+    group.setAttribute("transform", `translate(${x},${y})`);
+
+    // Append the group element to the new div element
+    div.appendChild(group);
+  }
+}
+
+function submitR() {
+  //checks for amount of routers user desires
+  if (validateRouters()) {
+    let amount = document.querySelectorAll('input[type="radio"][name="amount"]');
+    let option = document.getElementsByClassName('option');
+    for (var i = 0; i < option.length; i++) {
+      if (option[i].id === amount[i].value && amount[i].checked) {
+        option[i].style.display = 'block';
+        temp = option[i].id;
+        //asigning correct graph
+        let itemNumber = option[i].id;
+        switch (itemNumber) {
+          case "option2":
+            totalItem = 2;
+            break;
+          case "option3":
+            totalItem = 3;
+            break;
+          case "option4":
+            totalItem = 4;
+            break;
+          case "option5":
+            totalItem = 5;
+            break;
+          case "option6":
+            totalItem = 6;
+            break;
+        };
+      } else {
+        option[i].style.display = 'none';
+      }
+    }
+    customizeMes = document.getElementById("customizeMes");
+    customizeMes.innerHTML = "For further customization on the edge weight can be done below.";
+    createInputBoxesAndLabels();
+  }
+}
+
+function submitC() {}
+
 // The function submit is triggered when the user submits the form after pressing all the radio options.
 // All the main code such as the animations and setting up the graph is at.
 function submit() {
-  //checks for amount of routers user desires
-  let amount = document.querySelectorAll('input[type="radio"][name="amount"]');
-  let option = document.getElementsByClassName('option');
-  let temp = null;
-  let totalItem = 0;
-  for (var i = 0; i < option.length; i++) {
-    if (option[i].id === amount[i].value && amount[i].checked) {
-      option[i].style.display = 'block';
-      temp = option[i].id;
-      //asigning correct graph
-      let itemNumber = option[i].id;
-      switch (itemNumber) {
-        case "option2":
-          totalItem = 2;
-          break;
-        case "option3":
-          totalItem = 3;
-          break;
-        case "option4":
-          totalItem = 4;
-          break;
-        case "option5":
-          totalItem = 5;
-          break;
-        case "option6":
-          totalItem = 6;
-          break;
-      };
-    } else {
-      option[i].style.display = 'none';
-    }
-  }
-
   //assigning all variables
   let path = []
   let cost = 0;
@@ -249,7 +334,6 @@ function submit() {
   destination = destination.toUpperCase();
   let nodes = []; 
   let optionAnimation = document.getElementById(temp);
-  let optionTemp = 0;
   let range = ['A', 'B', 'C', 'D', 'E', 'F'];
   let graph = {};
 
@@ -258,32 +342,30 @@ function submit() {
     case "option2":
       graph = optionTwo;
       nodes = ["A", "B"];
-      optionTemp = 2;
       break;
     case "option3":
       graph = optionThree;
       nodes = ["A", "B", "C"];
-      optionTemp = 3;
       break;
     case "option4":
       graph = optionFour;
       nodes = ["A", "B", "C", "D"];
-      optionTemp = 4;
       break;
     case "option5":
       graph = optionFive;
       nodes = ["A", "B", "C", "D", "E"];
-      optionTemp = 5;
       break;
     case "option6":
       graph = optionSix;
       nodes = ["A", "B", "C", "D", "E", "F"];
-      optionTemp = 6;
       break;
   };
 
   //check for whice graph is executing
-  if (temp === "option1") {
+  if (!validateRouters()) {
+    return;
+  }
+  else if (temp === "option1") {
     document.getElementById("source").value = "";
     document.getElementById("destination").value = "";
     document.getElementById("finalcost").innerHTML = "The final cost from A to A is 0";
@@ -294,7 +376,7 @@ function submit() {
       algos(source, destination, cost, path, commaPath, graph);
       path = bellmanFord(graph, source, destination).path;
       table(source, destination, graph, nodes);
-      animation(path, optionAnimation, optionTemp);
+      animation(path, optionAnimation);
     }
   }
 }
