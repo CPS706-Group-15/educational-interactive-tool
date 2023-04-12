@@ -104,34 +104,8 @@
         </g>
         </g>
       </svg>
-      <!--
-      <div class="container-input">
-        <form name="input-form">
-          <div class="form-row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Source [A-F]">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Destination [A-F]">
-            </div>
-            <div class="col">
-              <select id="routers" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                <option selected>Choose # of routers</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                <option value="4">Four</option>
-                <option value="5">Five</option>
-                <option value="6">Six</option>
-              </select>
-            </div>
 
-          </div>
-        </form>
-        <button type="submit" class="btn btn-primary" value="Submit" type="submit" onclick="makeGraph();">Submit</button>
-      </div> -->
-      
-
+    
       </div>
       <div id="container-parent" class="container-parent">
         
@@ -158,13 +132,14 @@
                     </div>
                     <div class="col">
                       <select id="routers" class="custom-select mr-sm-2">
-                        <option selected>Choose # of routers</option>
+                        <option selected># of routers</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                         <option value="4">Four</option>
                         <option value="5">Five</option>
                         <option value="6">Six</option>
+                        <option value="7">Seven</option>
                       </select>
                     </div>
         
@@ -181,25 +156,10 @@
            
 
               <div class="container-weights">
-                <form name="weight-form">
-                  <div id="weight-options" class="weights form-row">
-                
-                    <!--
-                    <div class="col">
-                      <select id="routers" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                        <option selected>Choose # of routers</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
-                        <option value="6">Six</option>
-                      </select>
-                    </div> -->
-        
-                  </div>
+                <form class="Costs">
+                  <div id="weight-options" class="weights form-row"></div>
                 </form>
-               
+                               
               </div>
              
           
@@ -226,16 +186,6 @@
                     <span>Neighbor Node: </span>
                     <span id="neighbor-node"></span></p>
                   
-                  <!--
-                  <p>
-                    <br>
-                    <span id="SourceNode">S </span>
-                    <span> &#8594 </span>
-                    <span id="currentNode">?</span>
-                    <span> &#8594 </span>
-                    <span id="neighborNode">?</span>
-                  </p>
-                -->
                  </div>
                 </div>
                 <p><br>If the calculated distance is <b>less</b> than the shortest known distance, the shortest distance is updated<br><br></p>
@@ -246,7 +196,7 @@
               </div>
               
               
-              <svg class="arrays" width="774" height="312" viewBox="0 0 774 312" fill="none" xmlns="http://www.w3.org/2000/svg">  
+              <svg class="arrays" width="876" height="233" viewBox="0 0 876 233" fill="none" xmlns="http://www.w3.org/2000/svg">  
                 <g id="Group 13">
                 <rect id="PRA" x="194.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="PRB" x="292.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
@@ -254,13 +204,15 @@
                 <rect id="PRD" x="484.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="PRE" x="581.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="PRF" x="677.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
-                
-                <text id="PVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVA" x="232" y="170.2">-1</tspan></text>
-                <text id="PVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVB" x="332" y="170.2">-1</tspan></text>
-                <text id="PVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVC" x="428" y="170.2">-1</tspan><tspan x="428" y="218.2">-1</tspan></text>
-                <text id="PVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVD" x="518" y="170.2">-1</tspan><tspan x="518" y="218.2">-1</tspan></text>
-                <text id="PVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVE" x="612" y="170.2">-1</tspan><tspan x="612" y="218.2">-1</tspan></text>
-                <text id="PVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVF" x="708" y="170.2">-1</tspan><tspan x="708" y="218.2">-1</tspan></text>
+                <rect id="PRG" x="774.5" y="126.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
+
+                <text id="PVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVA" x="232" y="170.2">-</tspan></text>
+                <text id="PVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVB" x="332" y="170.2">-</tspan></text>
+                <text id="PVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVC" x="428" y="170.2">-</tspan></text>
+                <text id="PVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVD" x="518" y="170.2">-</tspan></text>
+                <text id="PVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVE" x="612" y="170.2">-</tspan></text>
+                <text id="PVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVF" x="708" y="170.2">-</tspan></text>
+                <text id="PVG" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPVG" x="804" y="170.2">-</tspan></text>
                 
                 <text id="PARENT" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="2" y="167.2">Parent:</tspan></text>
                 <text id="PLA" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLA" x="225" y="114.2">A</tspan></text>
@@ -269,19 +221,23 @@
                 <text id="PLD" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLD" x="515" y="114.2">D</tspan></text>
                 <text id="PLE" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLE" x="612" y="114.2">E</tspan></text>
                 <text id="PLF" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLF" x="707" y="114.2">F</tspan></text>
+                <text id="PLG" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TPLG" x="803" y="114.2">G</tspan></text>
+                
                 <rect id="IA" x="194.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="IB" x="292.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="IC" x="388.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="ID" x="484.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="IE" x="581.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 <rect id="IF" x="677.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
+                <rect id="IG" x="774.5" y="247.5" width="94" height="59" fill="#00527F" stroke="white" stroke-width="5"/>
                 
-                <text id="DVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVA" x="228" y="291.6">&#x221e;</tspan></text>
-                <text id="DVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVB" x="330" y="291.6">&#x221e;</tspan></text>
-                <text id="DVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVC" x="426" y="291.6">&#x221e;</tspan></text>
-                <text id="DVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVD" x="521" y="291.6">&#x221e;</tspan></text>             
-                <text id="DVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVE" x="617" y="291.6">&#x221e;</tspan></text>
-                <text id="DVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVF" x="708" y="291.6">&#x221e;</tspan></text>
+                <text id="DVA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVA" x="228" y="291.6">-;</tspan></text>
+                <text id="DVB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVB" x="330" y="291.6">-</tspan></text>
+                <text id="DVC" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVC" x="426" y="291.6">-</tspan></text>
+                <text id="DVD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVD" x="521" y="291.6">-</tspan></text>             
+                <text id="DVE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVE" x="617" y="291.6">-</tspan></text>
+                <text id="DVF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVF" x="708" y="291.6">-</tspan></text>
+                <text id="DVG" fill="white" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="36" font-weight="bold" letter-spacing="0em"><tspan id="TDVG" x="804" y="291.6">-</tspan></text>
                 
                 <text id="DISTANCES" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="288.2">Distances:</tspan></text>
                 <text id="DLA" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLA" x="225" y="237.2">A</tspan></text>
@@ -290,7 +246,8 @@
                 <text id="DLD" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLD" x="515" y="237.2">D</tspan></text>
                 <text id="DLE" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLE" x="612" y="237.2">E</tspan></text>
                 <text id="DLF" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLF" x="707" y="237.2">F</tspan></text>
-                </g>
+                <text id="DLG" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan id="TDLG" x="806" y="237.2">G</tspan></text>
+              </g>
                 <defs>
                 <filter id="filter0_d_92_122" x="614.08" y="273.28" width="33.812" height="20.42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
