@@ -1,5 +1,8 @@
 /* Centralized  CSS*/
 
+html {
+  scroll-behavior: smooth;
+}
 
   .container-top{
     background-color: #FFFEF0;
@@ -46,7 +49,7 @@
   .network-verbiage p{
     font-weight:400;
     font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+    font-size: 25px;
     color: #515e53;
     
   }
@@ -168,13 +171,6 @@
     color: #00527F;
   }
 
-  .explanation h2{
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    padding-top:0px;
-    font-weight: bold;
-    color: #00527F;
-  }
   
   .infobox{
     margin: 3% 4% 4% 4%;
@@ -188,13 +184,14 @@
   }
   .sourcebox{
     background-color: #D2E2C6;
-    height: 25%;
+    height: 20%;
     border-radius: 25px;
     margin: 5% 5% 2% 5%;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
     position:relative;
     
   }
+
 
   .buttons{
     padding-left: 10%;
@@ -206,7 +203,21 @@
     margin: 3% 5% 3% 5%;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
     position:relative;
+    display:none;
     
+  }
+
+  .container-weights{
+    display:flex;
+  }
+
+  .explanation h2{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top:0px;
+    font-weight: bold;
+    color: #00527F;
+   
   }
 
   .arrays{
@@ -226,9 +237,13 @@
  }
 
 
-  form {
-
+ #change_routers {
     padding:17px 5px 0px 15px;
+  }
+
+  #weight-options{
+    width:90%;
+    padding-left:50px;
   }
 
   label{
@@ -297,6 +312,20 @@
     color: #174ea6;
   }
 
+/* INPUT CONTAINER*/
+
+.container-input{
+
+  display:inline;
+ 
+}
+
+
+/* DROP DOWN */
+#router-options{
+  width:10%;
+  height: 15%;
+}
  
 
 

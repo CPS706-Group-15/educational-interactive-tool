@@ -39,12 +39,12 @@ html {
 
 
 .card-centralized{
-    background-color: #719370;
+    background-color: #FFFEF0;
     width: 25%;
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
-    color: #FFFFF9;
+    color: #719370;
 }
 
 .card-centralized img {
