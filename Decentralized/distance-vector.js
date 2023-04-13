@@ -239,7 +239,8 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
   let svg = option.querySelector("svg");
   let lines = svg.getElementsByTagName("line");
   let div = document.getElementById("customization");
-
+  let custom = document.getElementById("customization");
+  custom.innerHTML = ""; 
   // Loop through each line
   for (let i = 0; i < lines.length; i++) {
 
@@ -407,21 +408,22 @@ function submitR() {
 function submitC() {
   let option = document.querySelector(`#${temp}`);
   let svg = option.querySelector("svg");
-  const texts = svg.querySelectorAll("text");
+  let texts = svg.querySelectorAll("text");
+  let arr = [];
 
   for (let i = 0; i < Object.keys(values).length; i++) {
     let id = Object.keys(values)[i];
     texts.forEach(text => {
       if (text.id === id) {
         text.innerHTML = "";
+        arr[i] = (" " + text.id + " : " + values[id] + " ");
       }
     });
   }
-
   customizeMes = document.getElementById("customizeMes");
   customizeMes.innerHTML = "The old values of those edges are now deleted!";
   customizeMes2 = document.getElementById("customizeMes2");
-  customizeMes2.innerHTML = "Check below to look at the new weights";
+  customizeMes2.innerHTML = arr;
 }
 
 // The function submit is triggered when the user submits the form after pressing all the radio options.
