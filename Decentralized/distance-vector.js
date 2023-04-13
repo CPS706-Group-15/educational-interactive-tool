@@ -53,25 +53,25 @@ function bellmanFord(graph, sourceNode, destinationNode) {
 }
 
 // graphs data structure
-const optionTwo = { 
+let optionTwo = { 
   A: { B: 3}, 
   B: { A:  3}
 };
 
-const optionThree = { 
+let optionThree = { 
   A: { B: 4, C: 2}, 
   B: { A: 4, C: 6}, 
   C: { A: 2, B: 6} 
 };
 
-const optionFour = { 
+let optionFour = { 
   A: { B: 1, C: 4}, 
   B: { A: 1, C: 3, D: 8 }, 
   C: { A: 4, B: 3, D: 2 }, 
   D: { B: 8, C: 2} 
 };
 
-const optionFive = {
+let optionFive = {
   A: { B: 1, C: 4 },
   B: { A: 1, C: 4, D: 2 },
   C: { A: 4, B: 4, D: 3 },
@@ -79,7 +79,7 @@ const optionFive = {
   E: { B: 7, C: 5, D: 4 },
 };
 
-const optionSix = {
+let optionSix = {
     A: { B: 1, C: 4 },
     B: { A: 1, C: 4, D: 2, E: 7 },
     C: { A: 4, B: 4, D: 3, E: 5 },
@@ -93,7 +93,7 @@ const optionSix = {
         cost = 0;
         path.push("A");
     }
-    const result = bellmanFord(graph, source, destination);
+    let result = bellmanFord(graph, source, destination);
     path = result.path;
     cost = result.dist;
     commaPath = path.join(" → ");
@@ -297,7 +297,7 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
   updateWeights(values);
 }
 
-function updateWeights(values) {
+function updateWeights(values) { //storing the updated weights
   let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  
   for (let key in values){
     switch (key) {
@@ -357,7 +357,7 @@ function updateWeights(values) {
 
 }
 
-// runs the algorithm when the user presses the submit button. Also assures all parameters are valid
+// switches between the graphs
 function submitR() {
   //checks for amount of routers user desires
   if (validateRouters()) {
@@ -426,7 +426,7 @@ function submitC() {
   customizeMes2.innerHTML = arr;
 }
 
-// The function submit is triggered when the user submits the form after pressing all the radio options.
+// The function submit is triggered when the user submits the form after inputting all the options.
 // All the main code such as the animations and setting up the graph is at.
 function submit() {
   //assigning all variables
