@@ -285,13 +285,15 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
 
     input.addEventListener("input", function(event) {
       let value = event.target.value;
+      if (value < 0) {
+        event.target.value = 0;
+        value = 0;
+      }
       values[line.id] = value;
     });
   }
 
   updateWeights(values);
-  console.log(AB);
-  console.log(AC);
 }
 
 function updateWeights(values) {
@@ -402,17 +404,25 @@ function submitR() {
   }
 }
 
-// function submitC() {
-//   let option = document.getElementById(temp);
-//   let svg = option.querySelector("svg");
-  
-//   for (let edge in values) {
-//     let textElement = svg.getElementById(edge);
-//     if (textElement) {
-//       textElement.querySelector("tspan").textContent = values[edge];
-//     }
-//   }
-// }
+function submitC() {
+  let option = document.querySelector(`#${temp}`);
+  let svg = option.querySelector("svg");
+  const texts = svg.querySelectorAll("text");
+
+  for (let i = 0; i < Object.keys(values).length; i++) {
+    let id = Object.keys(values)[i];
+    texts.forEach(text => {
+      if (text.id === id) {
+        text.innerHTML = "";
+      }
+    });
+  }
+
+  customizeMes = document.getElementById("customizeMes");
+  customizeMes.innerHTML = "The old values of those edges are now deleted!";
+  customizeMes2 = document.getElementById("customizeMes2");
+  customizeMes2.innerHTML = "Check below to look at the new weights";
+}
 
 // The function submit is triggered when the user submits the form after pressing all the radio options.
 // All the main code such as the animations and setting up the graph is at.
