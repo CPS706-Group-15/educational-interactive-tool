@@ -1,8 +1,8 @@
 // Global variables
 let temp = null;
 let totalItem = 0;
-let values = [];
 let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  //initial weights between nodes
+let values = {};
 
 function bellmanFord(graph, sourceNode, destinationNode) {
   let dist = {};
@@ -280,20 +280,82 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
     container.style.display = "flex";
     container.style.justifyContent = "center";
     container.style.alignItems = "center";
-  }
 
-  input.addEventListener("input", function(event) {
+    input.value = 0;
+
+    input.addEventListener("input", function(event) {
       let value = event.target.value;
-      values[i] = value;
-  });
-
-  if (values.length() > 0) {
-    
+      values[line.id] = value;
+    });
   }
-  
+
+  updateWeights(values);
+  console.log(AB);
+  console.log(AC);
 }
 
-function submitR() { // runs the algorithm when the user presses the submit button. Also assures all parameters are valid
+function updateWeights(values) {
+  let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  
+  for (let key in values){
+    switch (key) {
+      case "AB":
+        AB = 0;
+        if(values[key] != 0) {
+          AB = values[key];
+        }
+        break;
+      case "AC":
+        if(values[key] != 0) {
+          AC = values[key];
+        }
+        break;
+      case "BC":
+        if(values[key] != 0) {
+          BC = values[key];
+        }
+        break;
+      case "BD":
+        if(values[key] != 0) {
+          BD = values[key];
+        }
+        break;
+      case "BE":
+        if(values[key] != 0) {
+          BE = values[key];
+        }
+        break;
+      case "CD":
+        if(values[key] != 0) {
+          CD = values[key];
+        }
+        break;
+      case "CE":
+        if(values[key] != 0) {
+          CE = values[key];
+        }
+        break;
+      case "DE":
+        if(values[key] != 0) {
+          DE = values[key];
+        }
+        break;
+      case "DF":
+        if(values[key] != 0) {
+          DF = values[key];
+        }
+        break;
+      case "EF":
+        if(values[key] != 0) {
+          EF = values[key];
+        }
+        break;
+    }
+  }
+
+}
+
+// runs the algorithm when the user presses the submit button. Also assures all parameters are valid
+function submitR() {
   //checks for amount of routers user desires
   if (validateRouters()) {
     let amount = document.querySelectorAll('input[type="radio"][name="amount"]');
@@ -340,7 +402,17 @@ function submitR() { // runs the algorithm when the user presses the submit butt
   }
 }
 
-function submitC() {}
+// function submitC() {
+//   let option = document.getElementById(temp);
+//   let svg = option.querySelector("svg");
+  
+//   for (let edge in values) {
+//     let textElement = svg.getElementById(edge);
+//     if (textElement) {
+//       textElement.querySelector("tspan").textContent = values[edge];
+//     }
+//   }
+// }
 
 // The function submit is triggered when the user submits the form after pressing all the radio options.
 // All the main code such as the animations and setting up the graph is at.
