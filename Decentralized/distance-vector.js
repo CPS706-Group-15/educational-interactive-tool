@@ -1,6 +1,8 @@
 // Global variables
 let temp = null;
 let totalItem = 0;
+let values = [];
+let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  
 
 function bellmanFord(graph, sourceNode, destinationNode) {
   let distance = {};
@@ -86,19 +88,19 @@ const optionSix = {
     F: { D: 6, E: 7 }
   };
 
-function algos(source, destination, cost, path, commaPath, graph) {
-  if (source == destination) {
-      cost = 0;
-      path.push("A");
-  }
-  const result = bellmanFord(graph, source, destination);
-  path = result.path;
-  cost = result.distance;
-  commaPath = path.join(" → ");
-  let finalcost = document.getElementById("finalcost");
-  finalcost.innerHTML = "The final cost from " + source + " to " + destination + " is " + cost;
-  let pathDiv = document.getElementById("path");
-  pathDiv.innerHTML = "The path from " + source + " to " + destination + " is " + commaPath;
+  function algos(source, destination, cost, path, commaPath, graph) {
+    if (source == destination) {
+        cost = 0;
+        path.push("A");
+    }
+    const result = bellmanFord(graph, source, destination);
+    path = result.path;
+    cost = result.distance;
+    commaPath = path.join(" → ");
+    let finalcost = document.getElementById("finalcost");
+    finalcost.innerHTML = "The final cost from " + source + " to " + destination + " is " + cost;
+    let pathDiv = document.getElementById("path");
+    pathDiv.innerHTML = "The path from " + source + " to " + destination + " is " + commaPath;
 }
 
 function validateInput(router) {
@@ -139,49 +141,59 @@ function table(source, destination, graph, nodes) {
   let des = document.getElementById("des");
   let desT = document.getElementById("desT");
   let desTT = document.getElementById("desTT");
-  if (source == null && destination == null && graph == null) {
-    des.textContent = `Router A Routing Table`;
-    desT.textContent = `There is none, since it is no connected to anything.`;
-    return false;
-  }
-  des.textContent = `Router ${source} Routing Table`;
-  desT.textContent = `It needed to go to ${destination}, so it looked at the routing table for that node.`;
-  desTT.textContent = `Then went accordingly given the cost at ${destination}.`;
-      
   let table_div = document.getElementById("table-div");
   let table = document.createElement("table");
-  while (table_div.firstChild) {
-      table_div.removeChild(table_div.firstChild);
-  }
-  table_div.appendChild(table);
   let headerRow = table.insertRow(0);
   let headerCell1 = headerRow.insertCell(0);
   let headerCell2 = headerRow.insertCell(1);
-  headerCell1.innerHTML = "Node";
-  headerCell2.innerHTML = "Cost";
 
-  for (let i = 0; i < nodes.length; i++)
-  {   
-      let totalCost = 0;
-      if (source == nodes[i]) {
-          totalCost = 0;
-      } else {
-        totalCost = bellmanFord(graph, source, nodes[i]).distance;
-      }
-      let nRow = table.insertRow(-1);
-      let cellOne = nRow.insertCell(0);
-      let cellTwo = nRow.insertCell(1);
+  if (source == null && destination == null && graph == null && nodes == null) {
+    while (table_div.firstChild) {
+      table_div.removeChild(table_div.firstChild);
+    }
+    des.textContent = `Router A Routing Table`;
+    desT.textContent = `There is none, since it is no connected to anything.`;
+    desTT.textContent = "";
+    return false;
+  } else {
+    des.textContent = `Router ${source} Routing Table`;
+    desT.textContent = `It needed to go to ${destination}, so it looked at the routing table for that node.`;
+    desTT.textContent = `Then went accordingly given the cost at ${destination}.`;
+        
 
-      cellOne.innerHTML = nodes[i];
-      cellTwo.innerHTML = totalCost;
+    while (table_div.firstChild) {
+        table_div.removeChild(table_div.firstChild);
+    }
+    table_div.appendChild(table);
 
-      if (nodes[i] == destination) {
-          cellOne.style.backgroundColor = "maroon";
-          cellOne.style.color = "white";
-          cellTwo.style.backgroundColor = "maroon";
-          cellTwo.style.color = "white";
+    headerCell1.innerHTML = "Node";
+    headerCell2.innerHTML = "Cost";
+  
+    for (let i = 0; i < nodes.length; i++)
+    {   
+        let totalCost = 0;
+        if (source == nodes[i]) {
+            totalCost = 0;
+        } else {
+          totalCost = bellmanFord(graph, source, nodes[i]).distance;
         }
+        let nRow = table.insertRow(-1);
+        let cellOne = nRow.insertCell(0);
+        let cellTwo = nRow.insertCell(1);
+  
+        cellOne.innerHTML = nodes[i];
+        cellTwo.innerHTML = totalCost;
+  
+        if (nodes[i] == destination) {
+            cellOne.style.backgroundColor = "maroon";
+            cellOne.style.color = "white";
+            cellTwo.style.backgroundColor = "maroon";
+            cellTwo.style.color = "white";
+          }
+    }
+    return true;
   }
+
 }
 
 function animation(path, option) {
@@ -198,7 +210,7 @@ function animation(path, option) {
             let line = lines[j];
             let lineId = line.getAttribute('id');
             if (lineId === `${path[i]}${path[i + 1]}` || lineId === `${path[i + 1]}${path[i]}`) {
-              line.setAttribute('stroke', '#b00f0c');
+              line.setAttribute('stroke', 'maroon');
               break;
             }
           }
@@ -231,18 +243,28 @@ function createInputBoxesAndLabels() {
 
   // Loop through each line
   for (let i = 0; i < lines.length; i++) {
+
+    let container = document.createElement("div");
+    div.appendChild(container);
+    
     let line = lines[i];
+    let label = document.createElement("label");
+    label.textContent = line.id;
+    label.id = line.id;
+    label.style.textAlign = "center";
+    label.style.fontFamily = "'Inter', sans-serif";
+    label.style.fontSize = "1.5em";
+    label.style.fontWeight = "bold";
+    label.style.paddingBottom = "0.5em";
+    label.style.color = "#658163";
+    label.style.display = "inline-block";
+    label.style.marginBottom = "10px";
+    label.style.paddingRight = "2em";
+    container.appendChild(label);
 
-    // Create a new input element
     let input = document.createElement("input");
-
-    // Set the input's value to the current line's x1 coordinate
-    input.value = line.getAttribute("x1");
-
-    // Set the input's type to "number"
     input.type = "number";
-
-    // Set the input's style properties
+    input.id = line.id;
     input.style.fontWeight = "bold";
     input.style.border = "3px solid #658163";
     input.style.background = "#FFFEF0";
@@ -251,34 +273,25 @@ function createInputBoxesAndLabels() {
     input.style.padding = "15px 15px";
     input.style.textTransform = "uppercase";
     input.style.textAlign = "center";
-
-    // Create a new label element
-    let label = document.createElement("label");
-
-    // Set the label's text to the line's id
-    label.textContent = line.id;
-
-    // Set the label's style properties
-    label.style.textAlign = "center";
-    label.style.fontFamily = "'Inter', sans-serif";
-    label.style.fontSize = "1.5em";
-    label.style.fontWeight = "bold";
-    label.style.paddingBottom = "0.5em";
-    label.style.color = "#658163";
-
-    // Append the label and input elements to a new SVG group element
-    let group = document.createElementNS("http://www.w3.org/2000/svg", "g");
-    group.appendChild(label);
-    group.appendChild(input);
-
-    // Position the group element at the same coordinates as the line
-    let x = parseInt(line.getAttribute("x1"));
-    let y = parseInt(line.getAttribute("y1"));
-    group.setAttribute("transform", `translate(${x},${y})`);
-
-    // Append the group element to the new div element
-    div.appendChild(group);
+    label.style.display = "block";
+    input.style.marginBottom = "20px";
+    input.style.marginTop = "5px";
+    input.style.flexGrow = "1";
+    container.appendChild(input);
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+    container.style.alignItems = "center";
   }
+
+  input.addEventListener("input", function(event) {
+      let value = event.target.value;
+      values[i] = value;
+  });
+
+  if (values.length() > 0) {
+    
+  }
+  
 }
 
 function submitR() {
@@ -286,6 +299,7 @@ function submitR() {
   if (validateRouters()) {
     let amount = document.querySelectorAll('input[type="radio"][name="amount"]');
     let option = document.getElementsByClassName('option');
+    let tempo = 0;
     for (var i = 0; i < option.length; i++) {
       if (option[i].id === amount[i].value && amount[i].checked) {
         option[i].style.display = 'block';
@@ -293,6 +307,9 @@ function submitR() {
         //asigning correct graph
         let itemNumber = option[i].id;
         switch (itemNumber) {
+          case "option1":
+            tempo = 1;
+            break;
           case "option2":
             totalItem = 2;
             break;
@@ -313,8 +330,13 @@ function submitR() {
         option[i].style.display = 'none';
       }
     }
-    customizeMes = document.getElementById("customizeMes");
-    customizeMes.innerHTML = "For further customization on the edge weight can be done below.";
+    if (tempo == 1) {
+      customizeMes = document.getElementById("customizeMes");
+      customizeMes.innerHTML = "";
+    } else {
+      customizeMes = document.getElementById("customizeMes");
+      customizeMes.innerHTML = "For further customization on the edge weight can be done below.";
+    }
     createInputBoxesAndLabels();
   }
 }
@@ -361,7 +383,6 @@ function submit() {
       break;
   };
 
-  //check for whice graph is executing
   if (!validateRouters()) {
     return;
   }

@@ -65,12 +65,17 @@
 
   .customize{
     width: 80%;
-    height:10em;
+    height:auto;
     padding: 2em;
+    padding-bottom: 4em;
     border-radius: 25px;
     background-color:#7F9F7E;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-  }
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
 
   .network{
     margin: 3% 4% 2% 8%;
@@ -417,4 +422,15 @@ th {
   color: #748A70;
   font-size: 18px;
   font-weight: bold;
+}
+
+.customization {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
 }
