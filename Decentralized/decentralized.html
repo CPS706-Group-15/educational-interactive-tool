@@ -11,7 +11,7 @@
     <script src="../Decentralized/distance-vector.js"></script>
 </head>
 <body>
-    <header>
+    <header id="navBar">
         <nav class="nav">
           <a href="../index.html" class="logo"><img src="../Home/logo.png"></a> 
           <div class="nav__link hide">
@@ -238,7 +238,7 @@
                     <text id="A" transform="translate(446.072 54) rotate(2.0285)" fill="#FBFFFE" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="35.2">A</tspan></text>
                     <text id="AB" transform="translate(671.637 107.302)" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="35.2">1</tspan></text>
                     <text id="BD" transform="translate(225 468)" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="35.2">2</tspan></text>
-                    <!-- <text id="AB" transform="translate(237.049 99.3479)" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="35.2">4</tspan></text> -->
+                    <text id="AB" transform="translate(237.049 99.3479)" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="35.2">4</tspan></text>
                     <text id="CD" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="683" y="497.2">8</tspan></text>
                     <text id="BC" transform="translate(442 193)" fill="#00527F" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="32" font-weight="bold" letter-spacing="0em"><tspan x="0" y="35.2">3</tspan></text>
                     </g>
@@ -586,6 +586,8 @@
             <button class="submit-btn" role="button" onClick={submitC()}>Submit</button>
             <div class="space">dd</div>
             <button class="submit-btn left" role="button" onClick="document.getElementById('container-top').scrollIntoView();">Get back</button>
+            <div class="space">dd</div>
+            <button class="submit-btn left" role="button" onClick="window.location.reload();">Reset</button>
           </div>
         </div>
       </div>
@@ -644,7 +646,6 @@
       </div>
 
     </section>
-
 
     <footer>
       <div id="copywrite">

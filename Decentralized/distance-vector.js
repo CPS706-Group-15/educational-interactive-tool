@@ -88,7 +88,7 @@ let optionSix = {
     F: { D: 6, E: 7 }
   };
 
-  function algos(source, destination, cost, path, commaPath, graph) { //run the algorithm when the submit button is pressed and format output for user
+function algos(source, destination, cost, path, commaPath, graph) { //run the algorithm when the submit button is pressed and format output for user
     if (source == destination) {
         cost = 0;
         path.push("A");
