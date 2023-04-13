@@ -2,29 +2,29 @@
 let temp = null;
 let totalItem = 0;
 let values = [];
-let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  
+let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  //initial weights between nodes
 
 function bellmanFord(graph, sourceNode, destinationNode) {
-  let distance = {};
+  let dist = {};
   let predecessor = {};
   
-  // Initialize all distances to infinity and predecessor to null
+  // Initialize all dists to infinity and predecessor to null
   for (let node in graph) {
-    distance[node] = Infinity;
+    dist[node] = Infinity;
     predecessor[node] = null;
   }
   
-  distance[sourceNode] = 0; // Distance to source node is 0
+  dist[sourceNode] = 0; // dist to source node is 0
   
   // Relax edges repeatedly
   for (let i = 0; i < Object.keys(graph).length - 1; i++) {
     for (let node in graph) {
-      for (let neighbor in graph[node]) {
-        let weight = graph[node][neighbor];
-        let totalDistance = distance[node] + weight;
-        if (totalDistance < distance[neighbor]) {
-          distance[neighbor] = totalDistance;
-          predecessor[neighbor] = node;
+      for (let neighbour in graph[node]) {
+        let weight = graph[node][neighbour];
+        let totalDist = dist[node] + weight;
+        if (totalDist < dist[neighbour]) {
+          dist[neighbour] = totalDist;
+          predecessor[neighbour] = node;
         }
       }
     }
@@ -32,10 +32,10 @@ function bellmanFord(graph, sourceNode, destinationNode) {
   
   // Check for negative-weight cycles
   for (let node in graph) {
-    for (let neighbor in graph[node]) {
-      let weight = graph[node][neighbor];
-      let totalDistance = distance[node] + weight;
-      if (totalDistance < distance[neighbor]) {
+    for (let neighbour in graph[node]) {
+      let weight = graph[node][neighbour];
+      let totalDist = dist[node] + weight;
+      if (totalDist < dist[neighbour]) {
         throw new Error('Negative-weight cycle detected');
       }
     }
@@ -49,7 +49,7 @@ function bellmanFord(graph, sourceNode, destinationNode) {
     path.unshift(node);
   }
     
-  return { distance: distance[destinationNode], path: path};
+  return { dist: dist[destinationNode], path: path}; //returns the distance to the destination node and the shorted path taken to get there
 }
 
 // graphs data structure
@@ -88,14 +88,14 @@ const optionSix = {
     F: { D: 6, E: 7 }
   };
 
-  function algos(source, destination, cost, path, commaPath, graph) {
+  function algos(source, destination, cost, path, commaPath, graph) { //run the algorithm when the submit button is pressed and format output for user
     if (source == destination) {
         cost = 0;
         path.push("A");
     }
     const result = bellmanFord(graph, source, destination);
     path = result.path;
-    cost = result.distance;
+    cost = result.dist;
     commaPath = path.join(" → ");
     let finalcost = document.getElementById("finalcost");
     finalcost.innerHTML = "The final cost from " + source + " to " + destination + " is " + cost;
@@ -103,7 +103,7 @@ const optionSix = {
     pathDiv.innerHTML = "The path from " + source + " to " + destination + " is " + commaPath;
 }
 
-function validateInput(router) {
+function validateInput(router) { //Assure the router the user has chosen is a valid router between A and F
   let pattern = /^[A-Fa-f]{1}$/;
   if (!pattern.test(router)) {
     alert("Invalid input! Please enter only A to F.");
@@ -115,7 +115,7 @@ function validateInput(router) {
   return true;
 }
 
-function validateRange(source, destination, range, totalItem) {
+function validateRange(source, destination, range, totalItem) { //Assures that the router that the user has chosen is a valid router that exists in the network
   let sourceInvalid = true;
   let destinationInvalid = true; 
   let lastCharacter = "";
@@ -137,7 +137,7 @@ function validateRange(source, destination, range, totalItem) {
   }
 }
 
-function table(source, destination, graph, nodes) {
+function table(source, destination, graph, nodes) { //creates a display version of the routing table for the user and colours in the network to show the path
   let des = document.getElementById("des");
   let desT = document.getElementById("desT");
   let desTT = document.getElementById("desTT");
@@ -175,7 +175,7 @@ function table(source, destination, graph, nodes) {
         if (source == nodes[i]) {
             totalCost = 0;
         } else {
-          totalCost = bellmanFord(graph, source, nodes[i]).distance;
+          totalCost = bellmanFord(graph, source, nodes[i]).dist;
         }
         let nRow = table.insertRow(-1);
         let cellOne = nRow.insertCell(0);
@@ -196,8 +196,7 @@ function table(source, destination, graph, nodes) {
 
 }
 
-function animation(path, option) {
-
+function animation(path, option) { // Animates the network to visually show the path to the user
   let lines = document.querySelectorAll('.line');
   lines.forEach(line => line.setAttribute('stroke', "#00527F"));
   let svg = option.querySelector("svg");
@@ -219,7 +218,7 @@ function animation(path, option) {
   }
 }
 
-function validateRouters() {
+function validateRouters() { //Assures that the user has chosen a number of routers for the network to have so that a network can exist for the user
   let amount = document.getElementsByName("amount");
   let checked = false;
   for (let i = 0; i < amount.length; i++) {
@@ -235,7 +234,7 @@ function validateRouters() {
   return true;
 }
 
-function createInputBoxesAndLabels() {
+function createInputBoxesAndLabels() { // creates the input boxes for the edge weights according to the number of routers and for the input of the source and destination router
   let option = document.getElementById(temp);
   let svg = option.querySelector("svg");
   let lines = svg.getElementsByTagName("line");
@@ -294,7 +293,7 @@ function createInputBoxesAndLabels() {
   
 }
 
-function submitR() {
+function submitR() { // runs the algorithm when the user presses the submit button. Also assures all parameters are valid
   //checks for amount of routers user desires
   if (validateRouters()) {
     let amount = document.querySelectorAll('input[type="radio"][name="amount"]');
