@@ -1,11 +1,12 @@
 // Global variables
-let temp = null;
-let totalItem = 0;
+let temp = null; //variable holds which graph we are operating on
+let totalItem = 0; //amount of values in the current graph
 let AC = 0, AB = 0, BC = 0, BD = 0, BE = 0, CD = 0, CE = 0, DE = 0, DF = 0, EF = 0;  //initial weights between nodes
-let values = {};
-let temporary = {};
-let changeVariable = false;
+let values = {}; //holding values of the input box
+let temporary = {}; //creating a temporary graph with values of input box
+let changeVariable = false; // checking if variables were changed
 
+//function that finds the shortest path
 function bellmanFord(graph, sourceNode, destinationNode) {
   let dist = {};
   let predecessor = {};
@@ -139,6 +140,22 @@ function validateRange(source, destination, range, totalItem) { //Assures that t
   }
 }
 
+function validateRouters() { //Assures that the user has chosen a number of routers for the network to have so that a network can exist for the user
+  let amount = document.getElementsByName("amount");
+  let checked = false;
+  for (let i = 0; i < amount.length; i++) {
+    if (amount[i].checked) {
+      checked = true;
+      break;
+    }
+  }
+  if (!checked) {
+    alert("Please choose a number of routers!");
+    return false;
+  }
+  return true;
+}
+
 function table(source, destination, graph, nodes) { //creates a display version of the routing table for the user and colours in the network to show the path
   let des = document.getElementById("des");
   let desT = document.getElementById("desT");
@@ -180,22 +197,21 @@ function table(source, destination, graph, nodes) { //creates a display version 
           totalCost = bellmanFord(graph, source, nodes[i]).dist;
         }
         let nRow = table.insertRow(-1);
-        let cellOne = nRow.insertCell(0);
-        let cellTwo = nRow.insertCell(1);
+        let cell1 = nRow.insertCell(0);
+        let cell2 = nRow.insertCell(1);
   
-        cellOne.innerHTML = nodes[i];
-        cellTwo.innerHTML = totalCost;
+        cell1.innerHTML = nodes[i];
+        cell2.innerHTML = totalCost;
   
         if (nodes[i] == destination) {
-            cellOne.style.backgroundColor = "maroon";
-            cellOne.style.color = "white";
-            cellTwo.style.backgroundColor = "maroon";
-            cellTwo.style.color = "white";
+            cell1.style.backgroundColor = "maroon";
+            cell1.style.color = "white";
+            cell2.style.backgroundColor = "maroon";
+            cell2.style.color = "white";
           }
     }
     return true;
   }
-
 }
 
 function animation(path, option) { // Animates the network to visually show the path to the user
@@ -220,22 +236,6 @@ function animation(path, option) { // Animates the network to visually show the 
   }
 }
 
-function validateRouters() { //Assures that the user has chosen a number of routers for the network to have so that a network can exist for the user
-  let amount = document.getElementsByName("amount");
-  let checked = false;
-  for (let i = 0; i < amount.length; i++) {
-    if (amount[i].checked) {
-      checked = true;
-      break;
-    }
-  }
-  if (!checked) {
-    alert("Please choose a number of routers!");
-    return false;
-  }
-  return true;
-}
-
 function createInputBoxesAndLabels() { // creates the input boxes for the edge weights according to the number of routers and for the input of the source and destination router
   let option = document.getElementById(temp);
   let svg = option.querySelector("svg");
@@ -245,10 +245,8 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
   custom.innerHTML = ""; 
   // Loop through each line
   for (let i = 0; i < lines.length; i++) {
-
     let container = document.createElement("div");
     div.appendChild(container);
-    
     let line = lines[i];
     let label = document.createElement("label");
     label.textContent = line.id;
@@ -263,10 +261,9 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
     label.style.marginBottom = "10px";
     label.style.paddingRight = "2em";
     container.appendChild(label);
-
     let input = document.createElement("input");
-    input.type = "number";
     input.id = line.id;
+    input.type = "number";
     input.style.fontWeight = "bold";
     input.style.border = "3px solid #658163";
     input.style.background = "#FFFEF0";
@@ -283,9 +280,7 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
     container.style.display = "flex";
     container.style.justifyContent = "center";
     container.style.alignItems = "center";
-
     input.value = 0;
-
     input.addEventListener("input", function(event) {
       let value = event.target.value;
       if (value < 0) {
@@ -403,7 +398,7 @@ function submitR() {
   }
 }
 
-function submitC() {
+function submitC() { //submitting the new edge values
   let option = document.querySelector(`#${temp}`);
   let svg = option.querySelector("svg");
   let texts = svg.querySelectorAll("text");
