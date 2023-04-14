@@ -1,8 +1,10 @@
 // Global variables
 let temp = null;
 let totalItem = 0;
-let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  //initial weights between nodes
+let AC = 0, AB = 0, BC = 0, BD = 0, BE = 0, CD = 0, CE = 0, DE = 0, DF = 0, EF = 0;  //initial weights between nodes
 let values = {};
+let temporary = {};
+let changeVariable = false;
 
 function bellmanFord(graph, sourceNode, destinationNode) {
   let dist = {};
@@ -80,12 +82,12 @@ let optionFive = {
 };
 
 let optionSix = {
-    A: { B: 1, C: 4 },
-    B: { A: 1, C: 4, D: 2, E: 7 },
-    C: { A: 4, B: 4, D: 3, E: 5 },
-    D: { B: 2, C: 3, E: 4, F: 6 },
+    A: { B: 3, C: 4 },
+    B: { A: 3, C: 2, D: 5, E: 5 },
+    C: { A: 4, B: 2, D: 1, E: 8 },
+    D: { B: 5, C: 1, E: 4, F: 3 },
     E: { B: 7, C: 5, D: 4, F: 7 },
-    F: { D: 6, E: 7 }
+    F: { D: 3, E: 7 }
   };
 
 function algos(source, destination, cost, path, commaPath, graph) { //run the algorithm when the submit button is pressed and format output for user
@@ -291,70 +293,66 @@ function createInputBoxesAndLabels() { // creates the input boxes for the edge w
         value = 0;
       }
       values[line.id] = value;
+      updateWeights();
     });
   }
-
-  updateWeights(values);
 }
 
-function updateWeights(values) { //storing the updated weights
-  let AC, AB, BC, BD, BE, CD, CE, DE, DF, EF = 0;  
+function updateWeights() { //storing the updated weights
   for (let key in values){
     switch (key) {
       case "AB":
-        AB = 0;
-        if(values[key] != 0) {
-          AB = values[key];
+        if(Number(values[key]) != 0) {
+          AB = Number(values[key]);
         }
         break;
       case "AC":
-        if(values[key] != 0) {
-          AC = values[key];
+        if(Number(values[key]) != 0) {
+          AC = Number(values[key]);
         }
         break;
       case "BC":
-        if(values[key] != 0) {
-          BC = values[key];
+        if(Number(values[key]) != 0) {
+          BC = Number(values[key]);
         }
         break;
       case "BD":
-        if(values[key] != 0) {
-          BD = values[key];
+        if(Number(values[key]) != 0) {
+          BD = Number(values[key]);
         }
         break;
       case "BE":
-        if(values[key] != 0) {
-          BE = values[key];
+        if(Number(values[key]) != 0) {
+          BE = Number(values[key]);
         }
         break;
       case "CD":
-        if(values[key] != 0) {
-          CD = values[key];
+        if(Number(values[key]) != 0) {
+          CD = Number(values[key]);
         }
         break;
       case "CE":
-        if(values[key] != 0) {
-          CE = values[key];
+        if(Number(values[key]) != 0) {
+          CE = Number(values[key]);
         }
         break;
       case "DE":
-        if(values[key] != 0) {
-          DE = values[key];
+        if(Number(values[key]) != 0) {
+          DE = Number(values[key]);
         }
         break;
       case "DF":
-        if(values[key] != 0) {
-          DF = values[key];
+        if(Number(values[key]) != 0) {
+          DF = Number(values[key]);
         }
         break;
       case "EF":
-        if(values[key] != 0) {
-          EF = values[key];
+        if(Number(values[key]) != 0) {
+          EF = Number(values[key]);
         }
         break;
     }
   }
-
 }
 
 // switches between the graphs
@@ -424,6 +422,15 @@ function submitC() {
   customizeMes.innerHTML = "The old values of those edges are now deleted!";
   customizeMes2 = document.getElementById("customizeMes2");
   customizeMes2.innerHTML = arr;
+  temporary = {
+    A: { B: AB, C: AC },
+    B: { A: AB, C: BC, D: BD, E: BE },
+    C: { A: AC, B: BC, D: CD, E: CE },
+    D: { B: BD, C: CD, E: DE, F: DF },
+    E: { B: BE, C: CE, D: DE, F: EF },
+    F: { D: DF, E: EF }
+  };
+  changeVariable = true;
 }
 
 // The function submit is triggered when the user submits the form after inputting all the options.
@@ -465,6 +472,18 @@ function submit() {
       nodes = ["A", "B", "C", "D", "E", "F"];
       break;
   };
+
+  if (changeVariable) {
+    for (let router in graph) {
+      for (let path in graph[router]) {
+        if (temporary[router][path] !== 0) {
+          graph[router][path] = temporary[router][path];
+        }
+      }
+    }
+  }
+
+  console.log(graph);
 
   if (!validateRouters()) {
     return;
