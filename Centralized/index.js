@@ -1,10 +1,11 @@
 /* Dijkstra Algorithm -
     - takes graph: 
-    - StartNose (source Node)
+    - StartNode (source Node)
     - endNode (destination Node)
 
 */
 function dijkstra(graph, startNode, endNode) {
+  // register gsap effects
   gsap.registerEffect({
       name: "swapText",
       effect: (targets, config) => {
@@ -30,6 +31,8 @@ function dijkstra(graph, startNode, endNode) {
     defaults: {duration: 0}, 
     extendTimeline: true
 });
+
+
   
   // Create an object to store the distances to each node and initialize them to Infinity
   const distances = {};
@@ -40,7 +43,6 @@ function dijkstra(graph, startNode, endNode) {
   
   //initialize startNode to 0 as the distance of source node to itself is 0.
   distances[startNode] = 0;
-  const processed = [];
     // Create an object to store the shortest path to each node
    const shortestPaths = {};
    // Create a priority queue to keep track of the next node to visit
@@ -50,33 +52,34 @@ function dijkstra(graph, startNode, endNode) {
   gsap.effects.swapText('#TDV'+ startNode ,{text:'0'});
   gsap.effects.swapText('#TPV' + startNode ,{text:'0'});
   
+  // if source and destination is same, cost is 0, return
+  if(startNode == endNode){
+    let str = "Cost from " + startNode + " to " + endNode + " = 0"
+    gsap.effects.swapText('#reasoning' ,{text:str});
+    return;
+
+  }
 
   const firstloop = async () => {
-    
-
     while (queue.length > 0) {
    
         // Get the node with the smallest distance from the priority queue
         const currentNode = queue.shift();
-        processed.push(currentNode);
+      
 
         
-        console.log(processed);
+  
         const doSomething = async () => {
           
-    
+          //iterate through each neighbor of the current node
           for (let neighbor in graph[currentNode]) {
+
               // Calculate the distance to the neighbor node
-             
-              if (!processed.includes(neighbor) ){ 
-              console.log('procress: ', neighbor)
               const distance = distances[currentNode] + graph[currentNode][neighbor];
-              //console.log('currentNode: ', currentNode,' neighbor: ', neighbor, ' distance: ', distance, ' distances[neighbor]: ', distances[neighbor] )
-              
+             
+              //update explanation section
               gsap.effects.text("#current-node" ,{text:currentNode});
               gsap.effects.swapText("#neighbor-node",{text:neighbor});
-              //gsap.effects.swapText("#currentNode" ,{text:currentNode}); 
-              //gsap.effects.swapText("#neighborNode" ,{text:neighbor});
               gsap.effects.swapText("#calculating-distance" ,{text: distance});
              
               //creating the string for updating the distance (text explanation)
@@ -97,10 +100,10 @@ function dijkstra(graph, startNode, endNode) {
               if (distance < distances[neighbor]) {
                 
                 
+                // If new shorest distance found, change link between nodes back to original as it is no longer part of the shortest path.
                 if (shortestPaths[neighbor] != undefined){
                   
                   elements = document.getElementsByClassName( shortestPaths[neighbor] + neighbor);
-
                   if (elements.length > 0) {
                       vector = '.' + shortestPaths[neighbor] + neighbor;
                   } else {
@@ -109,6 +112,7 @@ function dijkstra(graph, startNode, endNode) {
                   gsap.to(vector, {duration: 2, stroke: '#00527F'});
 
                 }
+                // update distance and shortest path structures.
                 distances[neighbor] = distance;
                 shortestPaths[neighbor] = currentNode;
                 
@@ -116,8 +120,8 @@ function dijkstra(graph, startNode, endNode) {
                 gsap.effects.swapText('#TPV' + neighbor ,{text:currentNode});
                 
                 
+                // changing the color of the link between nodes
                 elements = document.getElementsByClassName( neighbor + currentNode);
-
                 if (elements.length > 0) {  
                     vector = '.' + neighbor + currentNode;
                 } else {
@@ -125,14 +129,15 @@ function dijkstra(graph, startNode, endNode) {
                 }
    
                 gsap.to(vector, {duration: 2, stroke: '#800000'});
-              
+                
+                // Add neighbor if not in queue already
                 if (!queue.includes(neighbor)) {
                   queue.push(neighbor);
                 }
               }
 
 
-              }//proces
+      
 
               await sleep(1000);
             }
@@ -142,21 +147,25 @@ function dijkstra(graph, startNode, endNode) {
        await sleep(7000);
       }
       
+      // algorithm finished, inform user
       gsap.effects.swapText("#algo-finished" ,{text: '<b style="color:crimson; text-shadow: 2px 4px 4px rgba(46,91,173,0.6);"> Algorithm Completed!</b>' });
       finalPath(shortestPaths,endNode);
 
   }
   firstloop();
+  return true;
   
   
  
 }
-  
+
+// promise 
 const sleep = (time) => {
     return new Promise((resolve) => setTimeout(resolve, time))
 }
 
-//validate form before running alorithm
+
+//validate form before running algorithmn
 function validateForm(graph){
   let startNode = document.forms["input-form"]["nm"].value.toUpperCase();
   let desNode = document.forms["input-form"]["des"].value.toUpperCase();
@@ -189,8 +198,8 @@ function validateForm(graph){
       pattern = /^[A-Ga-g]$/i;
   }
 
-  if( startNode.length == 1 && desNode.length == 1 && pattern.test(startNode) && pattern.test(desNode) &&  (startNode != desNode)){
-     
+  // source node and destination node must meet criteria.
+  if( startNode.length == 1 && desNode.length == 1 && pattern.test(startNode) && pattern.test(desNode) ){
       document.getElementById("runAlgo").disabled = true;
       document.getElementById("setOptions").disabled = true;
       document.getElementById("routers").disabled = true;
@@ -198,7 +207,7 @@ function validateForm(graph){
       document.getElementsByClassName('container-weights')[0].style.display = 'none';
       document.getElementsByClassName('explanation')[0].style.display = 'block'; 
       dijkstra(graph, startNode, desNode);
-            
+           
   } 
   else{
       alert("Enter valid Source and Destination value.\nSource and Destination can not be the same.");
@@ -207,7 +216,7 @@ function validateForm(graph){
       
 }
  
-// GETS DATA STRUCTURE FOR GRAPH
+// GETS DATA STRUCTURE FOR CHOSEN GRAPH
 function getGraph(numRouters){
     
     var sendGraph;
@@ -216,6 +225,7 @@ function getGraph(numRouters){
       sendGraph = {
         A: {},
       };
+      break;
       case '2': 
       sendGraph = {
         A: { B: 2},
@@ -282,12 +292,11 @@ function getGraph(numRouters){
 }
 
 // RESET THE PAGE
-
 function refreshPage(){
   window.location.reload();
 }
 
-// OUTLINE THE FINAL PATH FROM SOURCE TO DESTINATION ONLY
+// OUTLINEs THE FINAL PATH FROM SOURCE TO DESTINATION ONLY
 function finalPath(shortestPaths,endNode){
   final={};
   let parent = shortestPaths[endNode] ;
@@ -331,6 +340,8 @@ function getEdges(graph){
 
 //ALLOWS FOR WEIGHT CHANGE
 function changeWeights(graph){
+
+  //register GSAP effect
   gsap.registerEffect({
     name: "swapText",
     effect: (targets, config) => {
@@ -343,12 +354,13 @@ function changeWeights(graph){
     defaults: {duration: 1}, 
     extendTimeline: true
 });
-  
+
+
+  // get the names of the edges in the network
   line = getEdges(graph);
-  //console.log(line)
-  for(var element in line){
-    console.log(line[element]);
-  }
+
+ 
+  // for each edge, create a element div element for weight input
   for(element in line){
     attributes = {id: "edge"+line[element] , className:"cost-row"}
     
@@ -367,8 +379,8 @@ function changeWeights(graph){
     var input = document.createElement('input')
     input.setAttribute("id", "cost" + line[element]);
     input.setAttribute("type","number");
-    input.setAttribute("min","0");
-    input.setAttribute("max","9");
+    input.setAttribute("min","1");
+    input.setAttribute("max","20");
     set.appendChild(input)
     
   
@@ -377,14 +389,14 @@ function changeWeights(graph){
   
 }
 
-//SETS OPTION, MAKES VISUAL CANGES IN GRAPH
+//SETS OPTION, MAKES VISUAL CHANGES IN GRAPH
 function setOptions(option){
-  console.log("here");
+
   let numRouters = document.forms["input-form"]["routers"].value;
   let graph = getGraph(numRouters);
   let edges = getEdges(graph);
-  console.log(edges)
-    
+
+    //checks to see if user made changes to the link weights
     for(elements in edges){
     let line = edges[elements]
     let selection = document.getElementById("cost"+line).value //document.forms["Costs"]["edge"+line].value;
@@ -416,7 +428,7 @@ function makeGraph(){
 }
 
 
-// EVENT LISTENER FOR CHNAGE IN ROUTER #
+// EVENT LISTENER FOR CHANGE IN ROUTER #
 var activities = document.getElementById("routers");
 activities.addEventListener("change", function() {
   document.getElementById("weight-options").innerHTML = "";
@@ -430,7 +442,7 @@ activities.addEventListener("change", function() {
 
 //SVG FOR THE DIFFERENT ROUTERS
 function getRouterHTML(router) {
-  console.log("in this function", router);
+
   let vHTML = "";
   
     if(router == 1){
@@ -457,7 +469,7 @@ function getRouterHTML(router) {
         </defs>
         </svg>`;
     }else if(router == 2){
-        console.log("here");
+
         vHTML = `<svg  class="network" width="542" height="313" viewBox="0 0 542 313" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="Group 2">
         <line class="AB" id="AB" x1="131.836" y1="85.9798" x2="400.836" y2="232.98" stroke="#00527F" stroke-width="16"/>
@@ -1016,3 +1028,10 @@ function getRouterHTML(router) {
     return vHTML;
 
 }
+
+
+
+
+
+
+
