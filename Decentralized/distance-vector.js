@@ -75,11 +75,11 @@ let optionFour = {
 };
 
 let optionFive = {
-  A: { B: 1, C: 4 },
-  B: { A: 1, C: 4, D: 2 },
-  C: { A: 4, B: 4, D: 3 },
-  D: { B: 2, C: 3, E: 4 },
-  E: { B: 7, C: 5, D: 4 },
+  A: { B: 2, C: 6 },
+  B: { A: 2, C: 1, D: 4, B: 5 },
+  C: { A: 6, B: 1, D: 3, E: 7},
+  D: { B: 4, C: 3, E: 2 },
+  E: { B: 5, C: 7, D: 2 },
 };
 
 let optionSix = {
@@ -478,6 +478,7 @@ function submit() {
     }
     changeVariable = false;
   }
+  console.log(graph);
 
   if (!validateRouters()) {
     return;
