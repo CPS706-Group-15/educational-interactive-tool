@@ -27,9 +27,9 @@ html {
   .network-pic{
     padding-top: 74px;
     padding-left:13px;
-   
     display: flex;
     justify-content: left;
+   
   }
 
   .network-verbiage{
@@ -49,9 +49,8 @@ html {
   .network-verbiage p{
     font-weight:400;
     font-family: 'Poppins', sans-serif;
-    font-size: 25px;
+    font-size: 1.5vw;
     color: #515e53;
-    
   }
 
   .network-verbiage button{
@@ -171,13 +170,6 @@ html {
     color: #00527F;
   }
 
-  .explanation h2{
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    padding-top:0px;
-    font-weight: bold;
-    color: #00527F;
-  }
   
   .infobox{
     margin: 3% 4% 4% 4%;
@@ -191,25 +183,38 @@ html {
   }
   .sourcebox{
     background-color: #D2E2C6;
-    height: 25%;
+    height: 20%;
     border-radius: 25px;
-    margin: 5% 5% 2% 5%;
+    margin: 5% 2% 2% 2%;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
     position:relative;
     
   }
 
-  .buttons{
-    padding-left: 10%;
-  }
+
+  
   .explanation{
     background-color:#FFFEF0;
-    height: 64%;
+    height: 70%;
     border-radius: 25px;
-    margin: 3% 5% 3% 5%;
+    margin: 5% 2% 2% 2%;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
     position:relative;
+    display:none;
     
+  }
+
+  .container-weights{
+    display:flex;
+  }
+
+  .explanation h2{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top:0px;
+    font-weight: bold;
+    color: #00527F;
+   
   }
 
   .arrays{
@@ -229,10 +234,33 @@ html {
  }
 
 
-  form {
-
-    padding:17px 5px 0px 15px;
+ #change_routers {
+    padding:17px 9px 0px 9px;
   }
+
+#weight-options{
+    width:100%;
+    padding-left:30px;
+    padding-top:10px;
+}
+
+.container-weights form{
+  width:100%;
+  display:inline-grid;
+}
+.cost-row{
+  display: inline;
+  height:40px;
+  width:50%
+}
+
+
+.Costs label {
+  width: 115px;
+  margin: 2%;
+  color: #F5F5F5;
+  display: inline-block;
+}
 
   label{
     width: 90px;
@@ -248,20 +276,6 @@ html {
     color : #C3C3C3;
 }
 
-  .input{
-    
-    width: 22%;
-    padding: 5px 15px;
-    margin: 8px 0;
-    
-  }
-
- 
-
-  
-
- 
-
 
 
   .submit-btn {
@@ -275,7 +289,6 @@ html {
     box-sizing: border-box;
     color: #3c4043;
     cursor: pointer;
-    display: inline-flex;
     fill: currentcolor;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
@@ -284,7 +297,7 @@ html {
     letter-spacing: .25px;
     line-height: normal;
     max-width: 100%;
-    overflow: visible;
+    overflow: hidden;
     padding: 5px 5px;
     position: relative;
     text-align: center;
@@ -300,7 +313,23 @@ html {
     color: #174ea6;
   }
 
+/* INPUT CONTAINER*/
+
+.container-input{
+
+  display:inline;
  
+}
+
+
+/* DROP DOWN */
+#router-options{
+  width:10%;
+  height: 15%;
+}
+ 
+/* INPUT TRY*/
+
 
 
 
