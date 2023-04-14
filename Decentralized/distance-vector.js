@@ -481,9 +481,8 @@ function submit() {
         }
       }
     }
+    changeVariable = false;
   }
-
-  console.log(graph);
 
   if (!validateRouters()) {
     return;
