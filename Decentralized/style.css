@@ -16,16 +16,27 @@
 
 .container-top{
     background-color: #FFFEF0;
-    height:127vh;
+    height:auto;
     background-size: cover;
     background-position: center;
     overflow: hidden;
     position: relative;
     padding-top: 1em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
   }
 
-  .container-top .waves{
+
+  .container-middle-middle {
+    background-color: #FFFEF0;
+    height:auto;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 26em;
+  }
+
+  .container-middle-middle .waves{
     position: absolute;
     bottom: 0;
     width: 100%;  
@@ -48,9 +59,26 @@
   }
 
 /* -------------------------------------- */
+::placeholder {
+  color: #b0b4b080; /* set the color to a light gray */
+}
+
+  .customize{
+    width: 80%;
+    height:auto;
+    padding: 2em;
+    padding-bottom: 4em;
+    border-radius: 25px;
+    background-color:#7F9F7E;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
 
   .network{
-    margin: 3% 4% 8% 8%;
+    margin: 3% 4% 2% 8%;
     width: 60%;
     height:auto;
     padding: 1em;
@@ -58,9 +86,8 @@
     background-color:#7F9F7E;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   }
-
   .infobox{
-    margin: 3% 8% 8% 4%;
+    margin: 3% 8% 2% 4%;
     width: 40%;
     height: auto;
     border-radius: 25px;
@@ -121,6 +148,7 @@
     color: #FFFEF0;
   }
 
+
   .headingtwo{
     text-align: center;
     font-family: 'Inter', sans-serif;;
@@ -168,11 +196,11 @@
 
   .submit-btn {
     width: 12em;
-    background: #FFFFF9;
-    border: 3px solid #658163;
+    background: #658163;
+    border: 3px solid #FFFFF9;
     border-radius: 24px;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-    color: #748A70;
+    color: #FFFEF0;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
@@ -184,8 +212,8 @@
 
   .submit-btn:hover {
     border: 3px solid #658163;
-    background: #658163;
-    color: #FFFEF0;
+    background: #FFFEF0;
+    color: #658163;
   }
 
   .decentralized-image {
@@ -394,4 +422,15 @@ th {
   color: #748A70;
   font-size: 18px;
   font-weight: bold;
+}
+
+.customization {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
 }

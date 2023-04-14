@@ -156,7 +156,6 @@ const sleep = (time) => {
     return new Promise((resolve) => setTimeout(resolve, time))
 }
 
-
 //validate form before running alorithm
 function validateForm(graph){
   let startNode = document.forms["input-form"]["nm"].value.toUpperCase();
@@ -283,6 +282,7 @@ function getGraph(numRouters){
 }
 
 // RESET THE PAGE
+
 function refreshPage(){
   window.location.reload();
 }
@@ -1016,10 +1016,3 @@ function getRouterHTML(router) {
     return vHTML;
 
 }
-
-
-
-
-
-
-
